@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        .sub a {
+           width:100px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background:red;
+            color:#fff;
+            border:1px solid #ccc;
+            margin:0 auto;
+            display:block;
+        }
+        #screen {
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity: 0.5;
+            z-index:999;
+            display:none;
+        }
+        #login {
+            position: absolute;
+            z-index:1000;
+            width:500px;
+            height:300px;
+            left:0px;
+            top:0px;
+            background:#ffffff;
+            display:none;
+        }
+        #login h2 {
+            position:relative;
+            width:500px;
+            height:50px;
+            background:#eee;
+            line-height: 50px;
+            text-align:center;
+
+        }
+        #login h2 span {
+            width:15px;
+            height:15px;
+            background:red;
+            line-height:15px;
+            position:absolute;
+            right:0;
+            top:0;
+            color:#ffffff;
+
+        }
+        #login h2 span a,#login h2 span a:hover {
+            color:#fff;
+            display:block;
+            text-decoration: none;
+        }
+        #login form {
+            width:500px;
+            height:250px;
+        }
+        #login form ul {
+            padding:20px;
+
+        }
+        #login form ul li {
+            line-height:50px;
+        }
+        #login form ul li input {
+            width:250px;
+            height:28px;
+            border:1px solid #ccc;
+        }
+        #login form ul li input.btn {
+            width:250px;
+            height:28px;
+            line-height: 28px;
+            background:#E4393C;
+            border:1px solid #ccc;
+            color:#fff;
+            margin-left:45px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="screen"></div>
+    <div id="content" style="width:1170px;height:1500px;margin:0 auto;">
+
+    </div>
+    <div class="sub"><a href="#">点击我</a></div>
+    <div id="login">
+        <h2>用户登录<span><a href="#" class="close">X</a></span></h2>
+        <form method="post" action="">
+            <ul>
+                <li><span>用 户:</span><input type="text" name="user"/></li>
+                <li><span>密 码:</span><input type="text" name="pass"/></li>
+                <li><span>邮 箱:</span><input type="text" name="email"/></li>
+                <li><input type="submit" value="提交" class="btn"/></li>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
+<script>
+   $(function(){
+       //遮罩层永远都是100%
+       function getSrceenWH(){
+           var w = $(window).width() + $(document).scrollLeft();
+           var h = $(window).height()  + $(document).scrollTop();
+           $('#screen').width(w).height(h);
+       };
+       //第一次的时候居中，当浏览器窗口变化的时候始终居中才行
+       function center(){
+           var width = ($(window).width() - $('#login').width())/2 + $(document).scrollLeft();
+           var height = ($(window).height() - $('#login').height())/2 + $(document).scrollTop();
+           $('#login').css('left',width);
+           $('#login').css('top',height);
+       };
+       //跨浏览器获取滚动条的位置
+       function getScroll(){
+           return {
+               top : document.documentElement.scrollTop || document.body.scrollTop,
+               left : document.documentElement.scrollLeft || document.body.scrollLeft
+           }
+       };
+
+       getSrceenWH();
+       center();
+       $(window).resize(function(){
+           center();
+           getSrceenWH();
+       });
+       $(document).scroll(function(){
+           center();
+           getSrceenWH();
+
+       });
+
+        var top = 0;
+        var left = 0;
+       //显示
+       $('.sub').click(function(){
+           $('#screen').css('display','block');
+           $('#login').css('display','block');
+           top = getScroll().top;
+           left = getScroll().left;
+           $(document).one('scroll',function(){
+                window.scrollTo(left,top);
+           });
+           //禁止滚动条
+           document.body.style.overflow = 'hidden';
+           document.documentElement.style.overflow = 'hidden';
+       });
+       //关闭
+       $('#login h2 .close').click(function(){
+           $('#screen').css('display','none');
+           $('#login').css('display','none');
+           $(document).one('scroll',function(){
+               window.scrollTo(left,top);
+           });
+           //禁止滚动条
+           document.body.style.overflow = 'auto';
+           document.documentElement.style.overflow = 'auto';
+       });
+
+       //如何让我们的视图变得能移动
+       $('#login h2').mousedown(function(e){
+           //alert($('#login h2').offset().left);
+           //alert($('#login').offset().left);
+           var _this = $('#login');//有时候使用文档对象，有时候使用#login，所以这时候将它统一了,都是#login。
+           var diffx = e.clientX - _this.offset().left;
+           var diffy = e.clientY - _this.offset().top;
+          $(document).mousemove(function(e){
+              //无论鼠标的位置在H2的哪个位置上，我们都获取到H2左上角到整个视图的偏移量
+              var left = e.clientX - diffx;
+              var top = e.clientY - diffy;
+              //进行范围的判断
+              if(left < 0){
+                  left = 0;
+              }else if(left <= $(document).scrollLeft()){
+                  left = $(document).scrollLeft();
+              }else if(left > $(window).width() + $(document).scrollLeft() - _this.innerWidth()){
+                  left = $(window).width() + $(document).scrollLeft() - _this.innerWidth();
+              }
+              if(top < 0){
+                  top = 0;
+              }else if(top <= $(document).scrollTop()){
+                  top = $(document).scrollTop();
+              }else if(top > $(window).height() + $(document).scrollTop() - _this.innerHeight()){
+                  top = $(window).height() + $(document).scrollTop() - _this.innerHeight();
+              }
+              //鼠标开始移动的时候，我们的视图也开始移动
+              _this.css('left',left);
+              _this.css('top',top);
+
+          });
+
+
+
+
+
+       })
+       $(document).mouseup(function(){
+           $(document).unbind('mousemove');
+       })
+
+   });
+</script>

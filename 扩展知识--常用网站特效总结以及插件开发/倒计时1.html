@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    var mydate1 = new Date(2015,07,29,9,00,00);
+
+    var mydate2 = new Date(2015,06,29,10,01,00); //这里必须减一，传值的情况下
+
+    var lastdate = mydate2.getTime() - mydate1.getTime();
+
+    var days = Math.floor(lastdate/(24*3600*1000));
+    //计算出小时数
+
+
+    var leave1=lastdate%(24*3600*1000);    //计算天数后剩余的毫秒数
+    var hours=Math.floor(leave1/(3600*1000));
+
+    //计算相差分钟数
+    var leave2=leave1%(3600*1000);        //计算小时数后剩余的毫秒数
+    var minutes=Math.floor(leave2/(60*1000));
+
+
+    //计算相差秒数
+    var leave3=leave2%(60*1000) ;     //计算分钟数后剩余的毫秒数
+    var seconds=Math.round(leave3/1000);
+    alert(" 相差 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒")
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <script src="jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        .sub a {
+            width:100px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background-color:red;
+            color:#fff;
+            border:1px solid #ccc;
+            margin:0 auto;
+            display:block;
+        }
+        #screen {
+            position:absolute;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity:0.5;
+            z-index:999;
+            display:none;
+        }
+        #login {
+            position:absolute;
+            z-index:1000;
+            width:550px;
+            height:300px;
+            left:0px;
+            top:0px;
+            background:#ffff;
+            display:none;
+        }
+        #login h2{
+            position:relative;
+            width: 500px;
+            height:50px;
+            background:#eee;
+            line-height: 50px;
+            text-align:center;
+        }
+        #login h2 span {
+            width: 15px;
+            height:15px;
+            background:red;
+            line-height:15px;
+            position:absolute;
+            right:0;
+            top:0;
+            color:#ffff;
+        }
+        #login h2 span a ,#login h2 span a:hover {
+            color:#fff;
+            display:block;
+            text-decoration:none;
+        }
+        #login form {
+            width:500px;
+            height:250px;
+        }
+        #login form ul li {
+            line-height:50px;
+        }
+        #login form ul li input {
+            width:250px;
+            height:28px;
+            border:1px solid #ccc;
+        }
+        #login form ul li input.btn {
+            width:250px;
+            height:28px;
+            line-height: 28px;
+            background:#E4393C;
+            border:1px solid #ccc;
+            color:#fff;
+            margin-left:45px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="screen"></div>
+<div id="content" style="width:1170px;height:1500px;margin:0 auto;"></div>
+<div class="sub"><a href="#">点我弹框</a></div>
+<div id="login">
+    <h2>用户登录</h2><span><a href="#" class="close">X</a></span>
+    <form method="post" action="">
+        <ul>
+            <li><span>用 户:</span><input type="text" name="user"/></li>
+            <li><span>密 码:</span><input type="text" name="pass"/></li>
+            <li><span>邮 箱:</span><input type="text" name="email"/></li>
+            <li><input type="submit" value="提交" class="btn"/></li>
+        </ul>
+    </form>
+</div>
+</body>
+</html>
+<script>
+
+</script>

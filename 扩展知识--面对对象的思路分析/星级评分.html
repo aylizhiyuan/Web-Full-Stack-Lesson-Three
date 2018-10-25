@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>星级评分</title>
+    <script src="jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        ul.star {
+            float:left;
+            margin-left:100px;
+            margin-top:100px;
+        }
+        li {
+            float:left;
+            position:relative;
+            width:19px;
+            height:19px;
+            background:url(images/star.png) no-repeat 0px 0px;
+        }
+        li span {
+            position:absolute;
+            left:0px;
+            top:20px;
+            display:none;
+        }
+        ul.star p {
+            float:left;
+            margin-left:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul class="star">
+        <li><span>一分差评</span></li>
+        <li><span>二分中等</span></li>
+        <li><span>三分满意</span></li>
+        <li><span>四分非常好</span></li>
+        <li><span>五分满分</span></li>
+        <p></p>
+    </ul>
+</body>
+</html>
+<script>
+    $(function(){
+        $('.star').mouseleave(function(){
+            $(this).children().css('background-position','0px 0px');
+            $('.star p').text(' ');
+        });
+        $('.star li').hover(function(){
+            //鼠标放上去的时候
+            $(this).find('span').show().end().prevAll().css('background-position','0px -28px').end().css('background-position','0px -28px');
+        },function(){
+            //鼠标离开的时候
+            $(this).find('span').hide().end().css('background-position','0px 0px');
+        });
+        $('.star li').click(function(){
+            var count = $(this).index()+1;
+            $('.star p').text('得分:'+count);
+            /*这里可以调用ajax来进行数据库的操作问题*/
+        });
+    })
+</script>

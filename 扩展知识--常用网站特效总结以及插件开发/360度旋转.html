@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <title>360旋转</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link href="css/base.css" rel="stylesheet"/>
+
+    <style>
+        .menu {
+            width:400px;
+            height:255px;
+            border:6px solid #ccc;
+            margin:30px auto 0;
+            overflow:hidden;
+
+        }
+        .menu ul {
+            width:400px;
+            height:255px;
+        }
+        .menu ul li img {
+            display:block;
+            width:400px;
+            height:255px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="menu">
+    <ul class="list">
+        <li><img src="images/image1_1.jpg" /></li>
+        <li><img src="images/image1_2.jpg" /></li>
+        <li><img src="images/image1_3.jpg" /></li>
+        <li><img src="images/image1_4.jpg" /></li>
+        <li><img src="images/image1_5.jpg" /></li>
+        <li><img src="images/image1_6.jpg" /></li>
+        <li><img src="images/image1_7.jpg" /></li>
+        <li><img src="images/image1_8.jpg" /></li>
+        <li><img src="images/image1_9.jpg" /></li>
+        <li><img src="images/image1_10.jpg" /></li>
+        <li><img src="images/image1_11.jpg" /></li>
+        <li><img src="images/image1_12.jpg" /></li>
+        <li><img src="images/image1_13.jpg" /></li>
+        <li><img src="images/image1_14.jpg" /></li>
+        <li><img src="images/image1_15.jpg" /></li>
+        <li><img src="images/image1_16.jpg" /></li>
+        <li><img src="images/image1_17.jpg" /></li>
+        <li><img src="images/image1_18.jpg" /></li>
+
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        //图片盒子的距离文档的横向偏移
+        var pic_x = $('.list').offset().left;
+        //图片盒子距离文档的纵向偏移
+        var pic_y = $('.list').offset().top;
+        //图片盒子宽度的一半
+        var pic_w = $('.list').width()/2;
+        //图片盒子高度的一半
+        var pic_h = $('.list').height()/2;
+        //图片的中心横坐标
+        var center_x = pic_x + pic_w;
+        var center_y = pic_y + pic_h;
+        var movetop = pic_w/10;
+        $('.list').mousemove(function(event){
+            var mouse_x = event.pageX;
+            var mouse_y = event.pageY;
+            if(mouse_x - center_x <= 0){
+                //鼠标在中心的左侧
+                moveImg(mouse_x,mouse_y,'left')
+            }else{
+                //鼠标在中心的右侧
+                moveImg(mouse_x,mouse_y);
+            }
+
+        });
+        function moveImg(m_x,m_y,dir){
+            var index = Math.ceil(Math.abs(m_x-center_x)/movetop);
+            if(dir){
+                $('.list li').eq(index).show().siblings().hide();
+            }else{
+                $('.list li').eq(18-index).show().siblings().hide();
+            }
+        }
+
+    })
+</script>

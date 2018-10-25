@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<script type="text/javascript" src="../js/jquery-2.0.3.js"></script>
+<script type="text/javascript" src="js/fsrPMD.js"></script>
+<script type="text/javascript">
+       $(document).ready(function () {
+           $("#text").fsrPMD({
+               Event: 'mouseover',        //事件
+               Id: 'text',              //容器ID
+               Bq: 'div',               //复制html标签
+               Fx: "down",             //方向
+               Time: 15             //时间
+           })
+
+           $("#img").fsrPMD({
+               Event: 'mouseover',        //事件
+               Id: 'img',              //容器ID
+               Bq: 'div',               //复制html标签
+               Fx: "down",             //方向
+               Time: 10             //时间
+           })
+
+           $("#img1").fsrPMD({
+               Event: 'mouseover',        //事件
+               Id: 'img1',              //容器ID
+               Bq: 'td',               //复制html标签
+               Fx: "left",             //方向
+               Time: 10             //时间
+           })
+        
+       })
+   </script>
+</head>
+<body>
+
+<div id="text"  style="height:72px; width:100px; overflow:hidden; float:left">
+  <div>
+    <li>大</li>
+    <li>家</li>
+    <li>好</li>
+    <li>我</li>
+    <li>是</li>
+    <li>痴</li>
+    <li>这</li>
+    <li>是</li>
+    <li>我</li>
+    <li>跑</li>
+    <li>马</li>
+    <li>灯</li>
+    <li>插</li>
+    <li>件</li>
+    <br />
+  </div>
+</div>
+<div id="img" style="width:383px; height:72px; overflow:hidden;">
+  <div> <img src="images/历史人物.jpg" style="width:383px; height:72px" /> <img src="images/名胜特产.jpg" style="width:383px; height:72px" /> <img src="images/名镇名街.jpg" style="width:383px; height:72px" /> <img src="images/湖北名胜.jpg" style="width:383px; height:72px" /> <img src="images/湖北特产.jpg" style="width:383px; height:72px" /> </div>
+</div>
+<br />
+<div id="img1" style="overflow:hidden; width:200px; height:72px;" >
+  <table>
+    <tr>
+      <td><img src="images/历史人物.jpg" style="width:200px; height:72px;" /></td>
+      <td><img src="images/湖北特产.jpg" style="width:200px; height:72px;" /></td>
+      <td><img src="images/名胜特产.jpg" style="width:200px; height:72px;" /></td>
+      <td><img src="images/湖北名胜.jpg" style="width:200px; height:72px" /></td>
+      <td><img src="images/湖北特产.jpg" style="width:383px; height:72px" /> </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

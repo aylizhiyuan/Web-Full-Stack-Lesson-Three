@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,ol,li,dl,dt {
+            list-style:none;
+        }
+        #banner {
+            position:relative;
+            width:880px;
+            height:300px;
+            margin:0 auto;
+        }
+        #banner ul li {
+            display:none;
+        }
+        .active {
+            display:block!important;
+        }
+        .page {
+            position:absolute;
+            right:30px;
+            bottom:20px;
+        }
+        .page span {
+            display:inline-block;
+            width:20px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            background:#000;
+            opacity: 0.5;
+            color:#fff;
+            margin-right:2.5px;
+        }
+        .page span:hover {
+            border:1px solid orange;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul>
+        <li class="active"><a href="#"><img src="images/banner1.jpg"></a></li>
+        <li><a href="#"><img src="images/banner2.png"></a></li>
+        <li><a href="#"><img src="images/banner3.png"></a></li>
+        <li><a href="#"><img src="images/banner4.png"></a></li>
+    </ul>
+    <div class="page">
+        <a href=javascript:void(0)><span class="prev"> < </span></a>
+        <a href=javascript:void(0)><span class="next"> > </span></a>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        //手自一体，prev的点击事件，next的点击事件，自动播放事件,鼠标进入，鼠标移出的时候
+        var index = 0;
+        //上一张
+        function prev(){
+            index = index < 0 ? $('ul li').length - 1 : index - 1;
+            showImg();
+        }
+        //下一张
+        function next(){
+            index = index > $('ul li').length - 1 ? 0 : index + 1;
+            showImg();
+        }
+        function showImg(){
+            $('ul li').eq(index).addClass('active').siblings().removeClass('active');
+        }
+        var autoplay = setInterval(function(){
+            //下一张
+            next();
+        },1500)
+        autoplay;
+        //鼠标移入的时候，清除autoplay,鼠标移出的时候恢复autoplay
+        $('ul').hover(function(){
+            clearInterval(autoplay);
+        },function(){
+            autoplay = setInterval(function(){
+                next();
+            },1500)
+        })
+        //点击> 的时候下一张，点击<上一张
+        $('.prev').click(function(){
+            clearInterval(autoplay);
+            prev();
+        })
+        $('.next').click(function(){
+            clearInterval(autoplay);
+            next();
+        })
+
+    })
+</script>

@@ -1,0 +1,7 @@
+*{padding:0;margin:0;font-family:'微软雅黑';}
+ul{list-style: none;margin:0;padding:0;}     /*ul是有margin,padding值的*/
+a{text-decoration: none;color:#333;}
+h1,h2,h3,h4,h5,h6{font-weight: 300;}
+.clearfix:after{content:'.';visibility: hidden;height: 0;clear:both;}
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }

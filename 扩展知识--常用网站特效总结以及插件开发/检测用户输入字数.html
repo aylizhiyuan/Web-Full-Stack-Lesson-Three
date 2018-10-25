@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+</head>
+<body>
+<span class="left">和大家分享一点新鲜事吧?</span>
+<span class="right weibo_num">可以输入:<strong>140</strong>个字</span>
+<textarea class="weibo_text" id="rl_exp_input"></textarea>
+
+</body>
+</html>
+<script>
+    //微博输入内容计算字个数
+    $('.weibo_text').on('keyup', weibo_num);
+    //微博输入内容得到交单计算字个数
+    $('.weibo_text').on('focus', function () {
+        setTimeout(function () {
+            weibo_num();
+        }, 50);
+    });
+
+    //140字检测
+    function weibo_num() {
+        var total = 280;
+        var len = $('.weibo_text').val().length;
+        var temp = 0;
+        if (len > 0) {
+            for (var i = 0; i < len; i++) {
+                if ($('.weibo_text').val().charCodeAt(i) > 255) {
+                    temp += 2;
+                } else {
+                    temp += 1;
+                }
+            }
+            var result = Math.round((total - temp)/2 - 0.5);
+            if (result >= 0) {
+                $('.weibo_num').html('您还可以输入<strong>' + result + '</strong>个字');
+                return true;
+            } else {
+                $('.weibo_num').html('已经超过了<strong class="red">' + result + '</strong>个字');
+                return false;
+            }
+        }else if(len == 0){
+            $('.weibo_num').html('您还可以输入<strong>140</strong>个字');
+        }
+    }
+</script>

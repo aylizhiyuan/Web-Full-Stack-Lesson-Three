@@ -1,0 +1,107 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+$	base.js	/^var $ = function(args){$/;"	f
+Base	base.js	/^function Base(args){$/;"	c
+Base.Base	base.js	/^    Base.prototype[name] = fn;$/;"	c
+Base.addClass	base.js	/^Base.prototype.addClass = function(className){$/;"	m
+Base.addRule	base.js	/^Base.prototype.addRule = function(num,selectorText,cssText,position){$/;"	m
+Base.animate	base.js	/^Base.prototype.animate = function(obj){$/;"	m
+Base.attr	base.js	/^Base.prototype.attr = function (attr, value) {$/;"	m
+Base.bind	base.js	/^Base.prototype.bind = function(event,fn){$/;"	m
+Base.center	base.js	/^Base.prototype.center = function (width, height) {$/;"	m
+Base.click	base.js	/^Base.prototype.click = function(fn){$/;"	m
+Base.css	base.js	/^Base.prototype.css = function(attr,value){$/;"	m
+Base.eq	base.js	/^Base.prototype.eq = function(num){$/;"	m
+Base.extend	base.js	/^Base.prototype.extend = function(name,fn){$/;"	m
+Base.find	base.js	/^Base.prototype.find  = function(str){$/;"	m
+Base.first	base.js	/^Base.prototype.first = function(){$/;"	m
+Base.form	base.js	/^Base.prototype.form = function (name) {$/;"	m
+Base.ge	base.js	/^Base.prototype.ge = function(num){$/;"	m
+Base.getClass	base.js	/^Base.prototype.getClass = function(className,parentNode){$/;"	m
+Base.getId	base.js	/^Base.prototype.getId = function(id){$/;"	m
+Base.getTagName	base.js	/^Base.prototype.getTagName = function(tag,parentNode){$/;"	m
+Base.hide	base.js	/^Base.prototype.hide = function(){$/;"	m
+Base.hover	base.js	/^Base.prototype.hover = function(over,out){$/;"	m
+Base.html	base.js	/^Base.prototype.html = function(str){$/;"	m
+Base.index	base.js	/^Base.prototype.index = function () {$/;"	m
+Base.last	base.js	/^Base.prototype.last = function(){$/;"	m
+Base.length	base.js	/^Base.prototype.length = function () {$/;"	m
+Base.lock	base.js	/^Base.prototype.lock = function () {$/;"	m
+Base.next	base.js	/^Base.prototype.next = function () {$/;"	m
+Base.opacity	base.js	/^Base.prototype.opacity = function (num) {$/;"	m
+Base.prev	base.js	/^Base.prototype.prev = function () {$/;"	m
+Base.removeClass	base.js	/^Base.prototype.removeClass = function(className){$/;"	m
+Base.removeRule	base.js	/^Base.prototype.removeRule = function(num,index){$/;"	m
+Base.resize	base.js	/^Base.prototype.resize = function (fn) {$/;"	m
+Base.show	base.js	/^Base.prototype.show = function(){$/;"	m
+Base.text	base.js	/^Base.prototype.text = function (str) {$/;"	m
+Base.toggle	base.js	/^Base.prototype.toggle = function () {$/;"	m
+Base.unlock	base.js	/^Base.prototype.unlock = function () {$/;"	m
+Base.value	base.js	/^Base.prototype.value = function (str) {$/;"	m
+DB_HOST	config.php	/^	define('DB_HOST', 'localhost');$/;"	d
+DB_NAME	config.php	/^	define('DB_NAME', 'blog');$/;"	d
+DB_PWD	config.php	/^	define('DB_PWD', '');$/;"	d
+DB_USER	config.php	/^	define('DB_USER', 'root');$/;"	d
+Date	json2.js	/^        Date.prototype.toJSON = function (key) {$/;"	c
+Date.toJSON	json2.js	/^        Date.prototype.toJSON = function (key) {$/;"	m
+JSON.parse.walk	json2.js	/^            function walk(holder, key) {$/;"	f
+JSON.stringify	json2.js	/^        JSON.stringify = function (value, replacer, space) {$/;"	f
+String	json2.js	/^        String.prototype.toJSON      =$/;"	c
+String.toJSON	json2.js	/^        String.prototype.toJSON      =$/;"	m
+_birthday	add.php	/^	$_birthday = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];$/;"	v
+_pass	is_login.php	/^	$_pass = sha1($_POST['pass']);$/;"	v
+a	index.php	/^$a = 10;$/;"	v
+addDomLoaded	tool.js	/^function addDomLoaded(fn){$/;"	f
+addDomLoaded.doReady	tool.js	/^    function doReady(){$/;"	f
+addEvent	tool.js	/^function addEvent(obj,type,fn){$/;"	f
+addEvent.equal	tool.js	/^addEvent.equal = function(es,fn){$/;"	f
+addEvent.exec	tool.js	/^addEvent.exec = function(event){$/;"	f
+addEvent.fixEvent	tool.js	/^addEvent.fixEvent = function(event){$/;"	f
+addEvent.fixEvent.preventDefault	tool.js	/^addEvent.fixEvent.preventDefault = function(){$/;"	c
+addEvent.fixEvent.stopPropagation	tool.js	/^addEvent.fixEvent.stopPropagation = function(){$/;"	c
+ajax	ajax.js	/^function ajax(obj) {$/;"	f
+ajax.callback	ajax.js	/^    function callback() {$/;"	f
+b	index.php	/^$b = 20;$/;"	v
+c	index.php	/^$c = $a + $b;$/;"	v
+conn	config.php	/^	$conn = @mysql_connect(DB_HOST, DB_USER, DB_PWD) or die('数据库链接失败：'.mysql_error());$/;"	v
+deleteRule	tool.js	/^function deleteRule(sheet, index) {$/;"	f
+f	json2.js	/^    function f(n) {$/;"	f
+fixedScroll	tool.js	/^function fixedScroll() {$/;"	f
+function.setOpacity	base.js	/^        function setOpacity(){$/;"	f
+function.setTarget	base.js	/^        function setTarget(){$/;"	f
+getCookie	tool.js	/^function getCookie(name) {$/;"	f
+getEvent	tool.js	/^function getEvent(event){$/;"	f
+getInner	tool.js	/^function getInner(){$/;"	f
+getInnerText	tool.js	/^function getInnerText(element) {$/;"	f
+getScroll	tool.js	/^function getScroll(){$/;"	f
+getStyle	tool.js	/^function getStyle(element,attr){$/;"	f
+getStyleNum	tool.js	/^function getStyleNum(element,attr){$/;"	f
+hasClass	tool.js	/^function hasClass(element,className){$/;"	f
+inArray	tool.js	/^function inArray(array, value) {$/;"	f
+insertRule	tool.js	/^function insertRule(sheet, selectorText, cssText, position) {$/;"	f
+json	get_blog.php	/^	$json = '';$/;"	v
+nextIndex	tool.js	/^function nextIndex(current, parent) {$/;"	f
+offsetTop	tool.js	/^function offsetTop(element) {$/;"	f
+preDef	tool.js	/^function preDef(event){$/;"	f
+predef	tool.js	/^function predef(e) {$/;"	f
+prevIndex	tool.js	/^function prevIndex(current, parent) {$/;"	f
+query	add.php	/^	$query = "INSERT INTO blog_user (user, pass, ques, ans, email, birthday, ps) $/;"	v
+query	add_blog.php	/^	$query = "INSERT INTO blog_blog (title, content, date)$/;"	v
+query	get_blog.php	/^	$query = mysql_query("SELECT title,content,date FROM blog_blog ORDER BY date DESC LIMIT 0,3") or die('SQL错误！');$/;"	v
+query	is_login.php	/^	$query = mysql_query("SELECT user FROM blog_user WHERE user='{$_POST['user']}' AND pass='{$_pass}'") or die('SQL错误！');$/;"	v
+query	is_user.php	/^	$query = mysql_query("SELECT user FROM blog_user WHERE user='{$_POST['user']}'") or die('SQL错误！');$/;"	v
+quote	json2.js	/^    function quote(string) {$/;"	f
+removeEvent	tool.js	/^function removeEvent(obj,type,fn){$/;"	f
+s	tool.js	/^    var s;$/;"	v
+scrollTop	tool.js	/^function scrollTop(){$/;"	f
+setCookie	tool.js	/^function setCookie(name, value, expires, path, domain, secure) {$/;"	f
+setInnerText	tool.js	/^function setInnerText(elememt, text) {$/;"	f
+str	json2.js	/^    function str(key, holder) {$/;"	f
+trim	tool.js	/^function trim(str){$/;"	f
+ua	tool.js	/^    var ua = navigator.userAgent.toLowerCase();\/\/获得浏览器的信息$/;"	v
+unsetCookie	tool.js	/^function unsetCookie(name) {$/;"	f
+xhr.onreadystatechange	ajax.js	/^        xhr.onreadystatechange = function () {$/;"	f

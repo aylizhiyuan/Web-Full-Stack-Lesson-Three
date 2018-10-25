@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+        .time { margin-top: 20px; text-align: center;}
+        .tips { color: red;}
+</style>
+</head>
+<body>
+<br /><br /><br /><br /><br />
+
+<div class="J_CountDown time" data-config="{
+    'endTime':'2012-12-21 0:0:0',
+    'endTips':'<span class=tips>距离世界末末日还有：<span>',
+    'stopTips':'世界末日到了，接受玛雅人的审判吧。'
+    }">多个倒计时
+</div>
+
+<div class="J_CountDown time" data-config="{
+    'startTime':1353300000,
+    'nowTime':1353306180,
+    'endTime':1384842180,
+    'minDigit':false
+    }">多个倒计时
+</div>
+
+<div class="J_CountDown time" data-config="{
+    'endTime':1353500000,
+    'showDay':0
+    }">多个倒计时
+</div>
+
+<div class="J_CountDown time" data-config="{
+    'startTime':'2012-12-21 0:0:0 ',
+    'endTime':'2013-9-7 17:27:00',
+    'startTips':'距离活动开始时间：',
+    'endTips':'活动结束时间：',
+    'stopTips':'<span>活动结束谢谢参与！</span>'
+    }">多个倒计时
+</div>
+
+<div class="J_CountDown time" data-config="{
+    'minDigit':0,
+    'startTime':'2012-9-7 17:25:00 ',
+    'endTime':'2013-9-7 17:27:00',
+    'timeUnitCls':{
+    'day':'m-d',
+    'hour':'m-h',
+    'min':'m-m',
+    'sec':'m-s'
+    }}">多个倒计时
+</div>
+
+
+<div id="J_CountDown" class="time">这个为单个倒计时</div>
+
+<div id="countDown" class="time">这个为单个倒计时</div>
+
+<div id="countDown2" class="time" data-end="2012-12-21">这个为单个倒计时</div>
+
+
+
+<div style=" border:5px #000000 solid; width:800px; padding:15px; line-height:24px; font-weight:bold; margin:120px auto;">
+  <p>/*
+    * 参数说明：本插件 支持 1个或多个倒计时    </p>
+  <p>* startTime    介绍：毫秒数（多少毫秒后倒计时开始）（格式：1347206408）或者日期格式时间（格式1：2012-9-07 01:01:01）（格式2：2012/9/07 01:01:01）</p>
+  <p> * endTime      介绍：毫秒数（多少毫秒后倒计时结束）（格式：1347206408）或者日期格式时间（格式1：2012-9-07 01:01:01）（格式2：2012/9/07 01:01:01）</p>
+  <p> * nowTime      介绍：获取服务器当前刷新的时间或者本地电脑的时间    </p>
+  <p>* interval     介绍：单位：毫秒，取值范围（>=100毫秒），默认值为1000毫秒，倒计时刷新间隔（单位为毫秒/次）即每隔多少毫秒刷新一次，例如：interval = 2000, 那么屏幕上的时间每次变化时会少两秒</p>
+  <p> * minDigit     介绍：每个时间单位值显示的最小位数，意思是超过不截断，少则前面补0显示，参数为：true 或 false  默认 true</p>
+  <p> * showDay      介绍：是否显示天数，参数为：true 或 false 默认 true    </p>
+  <p>* timeUnitCls  介绍：时间单位的组合值,每个时间单位的class名自定义，设定时间单位b标签的class    </p>
+  <p>*              例如: {
+    'd': 'm-d', //天
+    'h': 'm-h', //小时
+    'm': 'm-m', //分
+    's': 'm-s', //秒
+    }    </p>
+  <p>* startTips    介绍：未开始时候的提示语，可以不填    </p>
+  <p>* endTips      介绍：倒计时中的提示语，可以不填    </p>
+  <p>* stopTips     介绍：结束后的提示语，默认 0天0时0分0秒 or 0时0分0秒    </p>
+  <p>* timeStamp    介绍：是否显示 天、时、分、秒 这几个字，参数为：true 或 false 默认 true
+    * </p>
+  <p>*/ </p>
+</div>
+<script type="text/javascript" src="http://www.jq-school.com/js/jquery-1.7.2.min.js"></script>
+<script src="js/countdown.js"></script>
+<script>
+    // 多个倒计时需要这样调用
+    $('.J_CountDown').each(function () {
+        var $this = $(this),
+            data = $this.attr('data-config');
+        $this.countDown(eval('(' + data + ')'));
+    });
+
+    // 单个倒计时可以如此调用，效率更快。
+    $('#J_CountDown').countDown({
+        "endTime":'2012/12/21 01:01:01',
+        "timeStamp":false
+    });
+
+    // 单个倒计时可以如此调用，效率更快。
+    $('#countDown').countDown({
+        "startTime":'2012-9-7 17:25:00 ',
+        "endTime":'2012/12/21 01:01:01',
+        "startTips":'距离活动开始时间：',
+        "endTips":'活动结束时间：'
+    });
+
+    $('#countDown2').countDown();
+</script>
+</body>
+</html>

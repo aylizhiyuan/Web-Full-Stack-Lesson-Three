@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link href="css/base.css" rel="stylesheet"/>
+    <style>
+        #tab {
+            width:500px;
+            margin:20px auto;
+            height:300px;
+            border:1px solid #ccc;
+        }
+        #tab ul {
+
+        }
+        #tab ul li {
+            float:left;
+            width:250px;
+            height:50px;
+
+            line-height:50px;
+            text-align:center;
+        }
+        #tab ul li a {
+            display:block;
+        }
+        .div1 {
+            width:500px;
+            height:250px;
+            display:block;
+            text-indent:2em;
+            line-height:30px;
+        }
+        .div2 {
+            width:500px;
+            height:250px;
+            display:none;
+            text-indent:2em;
+            line-height:30px;
+        }
+        .active {
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul style="zoom:1;overflow: auto;">
+            <li><a href="#">tab1</a></li>
+            <li><a href="#">tab2</a></li>
+        </ul>
+        <div class="div1">这里是tab1的内容</div>
+        <div class="div2">这里是tab2的内容</div>
+    </div>
+</body>
+</html>
+<script>
+      $(function(){
+          $('#tab ul li').click(function(){
+                //首先获得当前的元素下标
+              var index = $(this).index();
+              //清除所有的背景
+              $('#tab ul li').each(function(){
+                  $(this).removeClass("active");
+              });
+              //当前的tab获得属性
+              $('#tab ul li').eq(index).addClass("active");
+              //首先让所有的div消失
+              $('#tab div').each(function(){
+                  $(this).css('display','none');
+              });
+              //让当前的div显示
+              $('#tab div').eq(index).css('display','block');
+
+          });
+
+      })
+</script>

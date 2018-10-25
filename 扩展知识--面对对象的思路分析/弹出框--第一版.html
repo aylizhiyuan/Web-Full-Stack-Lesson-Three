@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框第一版</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        /*按钮的样式*/
+        .sub a {
+            width:100px;
+            height:50px;
+            line-height:50px;
+            text-align:center;
+            background:red;
+            color:#fff;
+            border:1px solid #ccc;
+            margin:0 auto;
+            display:block;
+        }
+        #screen {
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity:0.5;
+            position:absolute;
+            z-index:999;
+            display:none;
+        }
+        #login {
+            position:fixed;
+            z-index:1000;
+            width:500px;
+            height:300px;
+            left:calc(50% - 250px);
+            top:calc(50% - 150px);
+            background:#fff;
+            display:none;
+        }
+        #login h2 {
+            position:relative;
+            width:500px;
+            height:50px;
+            background:#eee;
+            line-height:50px;
+            text-align:center;
+        }
+        #login h2 span {
+            position:absolute;
+            top:0;
+            right:0;
+            color:#fff;
+            width:15px;
+            height:15px;
+            background:red;
+            line-height:15px;
+            text-align:center;
+        }
+        #login .login-form {
+            width:500px;
+            height:250px;
+            line-height:50px;
+            padding:30px;
+        }
+        #login .login-form input {
+            border:1px solid #ccc;
+            width:250px;
+            height:20px;
+        }
+        #login .login-form .btn {
+            width:250px;
+            height:20px;
+            line-height:20px;
+            background:rgb(0,125,255);
+            color:#fff;
+            margin-left:40px;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--第一步,遮罩层-->
+<div id="screen"></div>
+<!--第二步,点击的按钮-->
+<div style="width:1150px;height:1500px;margin:0 auto;"></div>
+<div class="sub"><a href="#">点我弹窗</a></div>
+<!--第三步,我们的弹出框-->
+<form action="#" method="post" id="login">
+    <h2>用户登录信息<span class="close">x</span></h2>
+    <div class="login-form">
+        <label>用户:</label>
+        <input type="text" name="username" placeholder="请填写用户名"><br>
+        <label>密码:</label>
+        <input type="text" name="password" placeholder="请填写密码"><br>
+        <input type="submit" class="btn" value="提交"><br>
+    </div>
+</form>
+</body>
+</html>
+<script>
+    $(function(){
+        //等待所有的DOM元素加载完毕之后再执行脚本
+        /*解决问题1：背景层的高度问题，它是针对视图的100%,而不是针对文档的100%*/
+        /*解决问题2: 居中的问题，那么应该针对文档居中，不是视图居中.*/
+        /*解决问题3：当你去改变窗口大小或者说是滚动的时候，要让表单始终居中.*/
+        /*解决问题4：打开的时候，禁止掉滚动条，关闭的时候，放开滚动条*/
+        /*解决问题5：打开的时候，记录滚动条的位置，关闭的时候，恢复滚动条的位置*/
+        function getScreenWH(){
+            var width = $(document).width();
+            var height = $(document).height();
+            $('#screen').width(width).height(height);
+        }
+        getScreenWH();
+        //当改变窗口大小的时候
+        $(window).resize(function(){
+            getScreenWH();
+        })
+        //当滚动条进行滚动的时候
+        $(window).scroll(function(){
+            getScreenWH();
+        })
+
+        var top = 0;
+        var left = 0;
+
+
+        //简单解决办法:当我点击弹窗按钮的时候，这个背景层和表单一同显示
+        //当我点击X关闭按钮的时候，背景层和表单一起消失.
+        $('.sub').click(function(){
+            $('#screen').css('display','block');
+            $('#login').css('display','block');
+            /*禁止掉滚动条*/
+            $('body').css('overflow','hidden');
+            /*记录下滚动条的位置*/
+            var top = $(document).scrollTop();
+            var left = $(document).scrollLeft();
+            //console.log(top);
+            //console.log(left);
+            $(document).one('scroll',function(){
+                console.log(1);
+                window.scrollTo(left,top);
+            })
+        })
+        $('.close').click(function(){
+            $('#screen').css('display','none');
+            $('#login').css('display','none');
+            /*恢复滚动条*/
+            $('body').css('overflow','auto');
+        })
+
+
+
+
+    })
+</script>

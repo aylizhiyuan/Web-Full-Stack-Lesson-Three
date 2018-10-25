@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>相册折叠</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        #main {
+            margin:0 auto;
+            margin-top:30px;
+            width:1250px;
+            height:323px;
+            overflow:hidden;
+        }
+        .pic {
+            float:left;
+            width:100px;
+            height:303px;
+            border:1px solid #ccc;
+            opacity:0.6;
+            margin-top:10px;
+            cursor:pointer;
+        }
+        #pic1 {
+            background:url(images/slide-1.jpg) center center;
+            height:283px;
+            margin-top:20px;
+            /* 大小改变了，margin-top也变大了,就是为了错位 */
+        }
+        #pic2 {
+            background:url(images/slide-2.jpg) center center;
+        }
+        #pic3 {
+            background:url(images/slide-3.jpg) center center;
+            width:828px;
+            opacity:1;
+            height:323px;
+            margin-top:0;
+        }
+        #pic4 {
+            background:url(images/slide-4.jpg) center center;
+        }
+        #pic5 {
+            background:url(images/slide-5.jpg) center center;
+            height:283px;
+            margin-top:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="pic1" class="pic"></div>
+    <div id="pic2" class="pic"></div>
+    <div id="pic3" class="pic"></div>
+    <div id="pic4" class="pic"></div>
+    <div id="pic5" class="pic"></div>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        $('#pic1').click(function(){
+            $('#pic2').stop(true,true).animate({'width':'100px','opacity':'0.6','height':'301px','margin-top':'10px'},500);
+            $("#pic3").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic4").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"261px","margin-top":"30px"},500);
+            $("#pic5").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"241px","margin-top":"40px"},500);
+            $("#pic1").stop(true, true).animate({"width":"828px","opacity":"1","height":"321px","margin-top":"0px"},500);
+
+        });
+        $('#pic2').click(function(){
+            $("#pic1").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic3").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic4").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic5").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"261px","margin-top":"30px"},500);
+            $("#pic2").stop(true, true).animate({"width":"828px","opacity":"1","height":"321px","margin-top":"0px"},500);
+        });
+        $('#pic3').click(function(){
+            $("#pic2").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic4").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic1").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic5").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic3").stop(true, true).animate({"width":"828px","opacity":"1","height":"321px","margin-top":"0px"},500);
+
+        });
+        $('#pic4').click(function(){
+            $("#pic5").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic3").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic2").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic1").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"261px","margin-top":"30px"},500);
+            $("#pic4").stop(true, true).animate({"width":"828px","opacity":"1","height":"321px","margin-top":"0px"},500);
+
+        });
+        $('#pic5').click(function(){
+            $("#pic4").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"301px","margin-top":"10px"},500);
+            $("#pic3").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"281px","margin-top":"20px"},500);
+            $("#pic2").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"261px","margin-top":"30px"},500);
+            $("#pic1").stop(true, true).animate({"width":"100px","opacity":"0.6","height":"241px","margin-top":"40px"},500);
+            $("#pic5").stop(true, true).animate({"width":"828px","opacity":"1","height":"321px","margin-top":"0px"},500);
+
+        });
+    })
+
+</script>

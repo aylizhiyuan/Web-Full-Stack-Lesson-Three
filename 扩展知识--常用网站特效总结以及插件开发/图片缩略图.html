@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片缩略图</title>
+    <style>
+        body,ul,ol,li,img {
+            margin:0;
+            padding:0;
+        }
+        img {
+            border:none;
+        }
+        li {
+            list-style-type: none;
+        }
+        /*整体的布局*/
+        #slider {
+            width:743px;
+            margin:0 auto;
+            height:auto;
+            border:1px solid #888;
+        }
+        /*大图的*/
+        .show-box {
+            height:auto;
+            float:left;
+            width:100%;
+            position:relative;
+        }
+        .show-box li {
+            display:none;width:100%;float:left;height:auto;
+        }
+        .show-box .show {
+            display:block;
+        }
+        /*图片在整体的布局中居中，并设置最大的宽度，高度不设限*/
+        .show-box img {
+            display:block;
+            max-width:643px;
+            margin:0 auto;
+            _width:100%;
+        }
+        .show-btn {
+            display:block;
+            height:100%;
+            width:50px;
+            position:absolute;
+            /*解决IE6下点击按钮没有办法通过CSS来实现上下居中*/
+            _height:expression(eval(this.parentNode.offsetHeight));
+            *top:0;
+        }
+        .show-prev {
+            left:0;
+        }
+        .show-next {
+            right:0;
+            _right:-1px;
+        }
+        .show-btn span {
+            height:46px;
+            display:block;
+            position:absolute;
+            top:50%;
+            width:100%;
+            cursor:pointer;
+            margin-top:-23px;
+            background:url(http://www.jq-school.com/upload/thumbs/ahtt/page_button.gif) no-repeat;
+            _width:49px;
+        }
+        .show-prev span{background-position: -20px 0}
+        .show-next span{background-position: -89px 0}
+        /*小图*/
+        .minImgs {
+            width:100%;
+            height:92px;
+            position:relative;
+            margin-top:20px;
+            float:left;
+            overflow:hidden;
+
+        }
+        .clear {
+            clear:both;
+        }
+        .min-btn {
+            height:100%;
+            width:28px;
+            position:absolute;
+            top:0;
+            display:block;
+            background: url(http://www.jq-school.com/upload/thumbs/ahtt/album-arrow.png) no-repeat
+
+        }
+        .min-prev{left:0}
+        .min-prev:hover{background-position: -28px 0}
+        .min-next{right: 0;background-position: 0 -94px}
+        .min-next:hover{background-position: -28px -94px}
+        .min-box {
+            width:684px;
+            height:100%;
+            margin:0 auto;
+            position:relative;
+            overflow:hidden;
+            height:76px;
+            top:8px;
+        }
+        .min-box-list {
+            height:100%;
+            position:absolute;
+            left:0;
+            top:0;
+            width:776px;
+        }
+        .min-box-list .cur{background:#F45E5E}
+        .min-box-list li{height: 70px;width: 76px;padding: 3px 0 ;float: left;cursor: pointer}
+        .min-box-list li div{width: 70px;height: 70px;overflow: hidden;margin: 0 auto}
+
+
+    </style>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+</head>
+<body>
+<div id="slider">
+    <!--大图的切换-->
+    <div class="show-box">
+        <ul>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big1.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big2.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big3.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big4.jpg'/></a></li>
+            <li class='show'><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big5.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big6.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big7.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big8.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big9.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big10.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big11.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big12.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big13.jpg'/></a></li>
+            <li><a href="#"><img src='http://www.jq-school.com/upload/thumbs/ahtt/big14.jpg'/></a></li>
+        </ul>
+        <div class="show-btn show-prev"><span></span></div>
+        <div class="show-btn show-next"><span></span></div>
+    </div>
+    <!--小图的切换-->
+    <div class="minImgs">
+        <a href="javascript:;" class="min-prev min-btn"></a>
+        <a href="javascript:;" class="min-next min-btn"></a>
+        <div class='min-box'>
+            <ul class='min-box-list'>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/1.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/2.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/3.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/4.jpg'/></div></li>
+                <li  class='cur'><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/5.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/6.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/7.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/8.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/9.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/10.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/11.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/12.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/13.jpg'/></div></li>
+                <li><div><img src='http://www.jq-school.com/upload/thumbs/ahtt/14.jpg'/></div></li>
+            </ul>
+        </div>
+    </div>
+    <div class='clear'></div>
+
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        var oSlider=$('#slider'),
+                oShowBox=oSlider.find('.show-box'),
+                oShowPrev=oSlider.find('.show-prev'),
+                oShowNext=oSlider.find('.show-next'),
+                oMinPrev=oSlider.find('.min-prev'),
+                oMinNext=oSlider.find('.min-next'),
+                oMinBoxList=oSlider.find('.min-box-list'),
+                aShowBoxLi=oShowBox.find('li'),
+                aMinBoxLi=oMinBoxList.find('li'),
+                iMinLiWidth=aMinBoxLi.first().outerWidth(),
+                iNum=aMinBoxLi.length,
+                iNow=4;//这里初始值为4的原因是 当前显示的图片下标为4
+
+        //根据小图片的多少来计算出父容器的宽度,让其显示成一行
+        oMinBoxList.css('width',iNum*iMinLiWidth+'px');
+
+
+        oShowPrev.hover(function(){
+            //采用链式操作减少dom操作.
+            $(this).css({backgroundColor:'#F5F5F5'}).find('span').css({backgroundPosition:'-20px -47px'})
+        },function(){
+            $(this).css({backgroundColor:'#fff'}).find('span').css({backgroundPosition:'-20px 0px'})
+        })
+        oShowNext.hover(function(){
+            $(this).css({backgroundColor:'#F5F5F5'}).find('span').css({backgroundPosition:'-89px -47px'})
+        },function(){
+            $(this).css({backgroundColor:'#fff'}).find('span').css({backgroundPosition:'-89px 0px'})
+        })
+
+        //键盘左右方向箭控制图片显示  (这里采用原生js)
+        document.onkeyup=function(ev)
+        {
+            var o=window.event || ev; //获取事件对象
+            if(o.keyCode==37)
+            {
+                changePrev()
+            }
+            else if(o.keyCode==39)
+            {
+                changeNext()
+            }
+        }
+
+        //小图片列表添加点击事件
+        aMinBoxLi.click(function(){
+            var index=$(this).index();
+            iNow=index;
+            setLayout();//回调样式及动画函数
+        })
+
+        //左右按钮添加点击  回调
+        oMinPrev.click(changePrev);
+        oMinNext.click(changeNext);
+        oShowPrev.click(changePrev);
+        oShowNext.click(changeNext);
+
+        function changePrev()
+        {   //iNow相当于下标索引，固下标索引不能小于0
+            if(iNow<=0)
+            {
+                return;
+            }
+            iNow--;
+            setLayout()
+        }
+        function changeNext()
+        {
+            if(iNow>=iNum-1)
+            {
+                return;
+            }
+            iNow++;
+            setLayout();
+        }
+
+        //设置显示样式及动画
+        function setLayout()
+        {
+            var oCurLi = aShowBoxLi.eq(iNow);
+            aShowBoxLi.hide().eq(iNow).fadeIn('slow');
+            aMinBoxLi.removeClass('cur').eq(iNow).addClass('cur');
+
+            //限制图片运动距离，以免出现空白.
+            if(iNow>=4 && iNow< iNum-4)
+            {
+                oMinBoxList.animate({left:-iMinLiWidth*(iNow-4)},100)
+            }
+        }
+    })
+
+
+</script>

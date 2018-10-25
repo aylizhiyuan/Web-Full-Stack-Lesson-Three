@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,ol,li,dl,dt {
+            list-style:none;
+        }
+        #banner {
+            position:relative;
+            width:880px;
+            height:300px;
+            margin:0 auto;
+        }
+        #banner ul li {
+            display:none;
+        }
+        .active {
+            display:block!important;
+        }
+        .page {
+            position:absolute;
+            right:30px;
+            bottom:20px;
+        }
+        .page span {
+            display:inline-block;
+            width:20px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            background:#000;
+            opacity: 0.5;
+            color:#fff;
+            margin-right:2.5px;
+        }
+        .page span:hover {
+            border:1px solid orange;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul>
+        <li class="active"><a href="#"><img src="images/banner1.jpg"></a></li>
+        <li><a href="#"><img src="images/banner2.png"></a></li>
+        <li><a href="#"><img src="images/banner3.png"></a></li>
+        <li><a href="#"><img src="images/banner4.png"></a></li>
+    </ul>
+    <div class="page">
+        <a href=javascript:void(0)><span class="prev"> < </span></a>
+        <a href=javascript:void(0)><span class="next"> > </span></a>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        //首先，先创建一个构造函数
+        var start = 0;
+        function lunbo(element){
+            this.ele = element;
+            this.autoplay = null;
+            //调用初始化的方法
+            this.init();
+        }
+        //构造函数的方法
+        lunbo.prototype.init = function(){
+            //在初始化里面，究竟需要调什么方法
+            this.auto();
+            this.over();
+            this.check();
+        }
+        lunbo.prototype.showImg = function(){
+            console.log(this);
+            $('ul li').eq(start).addClass('active').siblings().removeClass('active');
+        }
+        //上一张
+        lunbo.prototype.prev = function(){
+            start = start < 0 ? $('ul li').length - 1 : start - 1;
+            this.showImg();
+        }
+        //下一张
+        lunbo.prototype.next = function(){
+            start = start > $('ul li').length - 1 ? 0 : start + 1;
+            this.showImg();
+        }
+        //自动播放
+        lunbo.prototype.auto = function(){
+           this.autoplay = setInterval(function(){
+                //下一张
+                lunbo.prototype.next();
+            },1500)
+        }
+
+        //hover事件
+        lunbo.prototype.over = function(){
+            $('ul').hover(function(){
+                clearInterval(this.autoplay);
+            },function(){
+                this.autoplay = setInterval(function(){
+                    lunbo.prototype.next();
+                },1500)
+            })
+        }
+        //click事件
+        lunbo.prototype.check = function(){
+            $('.prev').click(function(){
+                clearInterval(this.autoplay);
+                lunbo.prototype.prev();
+            })
+            $('.next').click(function(){
+                clearInterval(this.autoplay);
+                lunbo.prototype.next();
+            })
+        }
+        new lunbo('#banner');
+    })
+</script>

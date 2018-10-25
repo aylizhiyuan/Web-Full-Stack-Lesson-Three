@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>简单的轮播1</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        #content {
+            width:100%;
+            height:100%;
+            margin-top:20px;
+        }
+        #content ul.pic {
+            position:relative;
+            width:900px;
+            height:150px;
+            margin:0 auto;
+            overflow: hidden;
+
+        }
+        #content ul.pic > li {
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:1;
+        }
+        #content ul.pic > li img {
+            display:block;
+        }
+        #content ul.pic ul.box {
+            position:absolute;
+            overflow: auto;
+            bottom:0;
+            left:450px;
+            z-index: 3;
+        }
+        #content ul.pic ul.box li {
+            float:left;
+            line-height: 30px;
+        }
+        #content ul.pic ul.box li.check{
+            color:#ddd;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul class="pic">
+            <!--z-index的切换,覆盖层级的切换 -->
+            <li><a href="#"><img src="images/banner1.jpg"/></a></li>
+            <li><a href="#"><img src="images/banner2.jpg"/></a></li>
+            <li><a href="#"><img src="images/banner3.jpg"/></a></li>
+            <ul class="box">
+                <li>●</li>
+                <li>●</li>
+                <li>●</li>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        //轮播的初始化
+        $('.pic > li').first().css('z-index','2');
+        $('.pic .box li').first().addClass('check');
+        //自动循环的开始
+        var pic_start = 1;
+        var pic_end = $('.pic > li').length;
+        //自动执行
+        var timer = setInterval(auto,1000);
+        //timer这个值至关重要，全局的变量，根据鼠标的移入移出有值或者无值，鼠标移入的时候，去除掉timer，自动播放就停止了，鼠标移出任何一个，timer就又有值了。
+
+
+
+        //自动播放开始
+        function auto(){
+            if(pic_start >= pic_end){
+                pic_start = 0;
+            }
+            $('.pic > li').eq(pic_start).css('z-index','2').siblings().not('.box').css('z-index','1');
+            $('.pic .box li').eq(pic_start).addClass('check').siblings().removeClass('check');
+            pic_start++;
+        }
+        //手动播放
+        $('.pic .box > li').hover(function(){
+            //鼠标放上去之后，去除自动播放
+            clearInterval(timer);
+            //根据当前来选择
+            var index = $(this).index();
+            $('.pic > li').eq(index).css('z-index','2').siblings().not('.box').css('z-index','1');
+            $('.pic .box li').eq(index).addClass('check').siblings().removeClass('check');
+
+        },function(){
+            pic_start = $(this).index()+1;
+            timer = setInterval(auto,1000);
+        });
+    });
+
+</script>

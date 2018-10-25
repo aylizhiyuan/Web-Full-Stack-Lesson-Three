@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="timer"></div>
+
+</body>
+</html>
+
+<script>
+    var target_time = new Date('2016-11-02 17:50:00'.replace(/-/g,'/')).getTime();
+    var now_time = new Date().getTime();
+    var t = Math.floor((target_time - now_time) / 1000);
+    var MIN = 60;
+    var HOUR = MIN * 60;
+    var DAY = HOUR * 24;
+    function num(n) {
+        var str = '0' + (n > 0 ? n : 0);
+        return str.substr(-2);
+    };
+    function timer(){ 
+        var days = Math.floor(t / DAY);
+        var hours = Math.floor(t % DAY / HOUR);
+        var minutes = Math.floor(t % HOUR / MIN);
+        var seconds = Math.floor(t % MIN);
+        if(t < 60){
+            //小于60秒的
+            var content = '刚刚发布';
+        }else if(days <= 1){
+            //如果是今天的就只显示小时，分钟和秒
+            var content = num(hours) + "小时" + num(minutes) + "分钟" + num(seconds) + "秒";
+
+        }else{
+            //如果不符合上面两个，就显示所有的
+            var content = num(days) + "天" + num(hours) + "小时" + num(minutes) + "分钟" + num(seconds) + "秒";
+        }
+
+        document.getElementById("timer").innerHTML = content;
+    };
+    function main() {
+        timer();
+        setTimeout(function() {
+            t -= 1;
+            timer();
+            if (t > 0) {
+                setTimeout(arguments.callee, 1000);
+            }
+        }, 1000);
+    };
+    main();
+</script>

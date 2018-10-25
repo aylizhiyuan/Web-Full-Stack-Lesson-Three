@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>捕获和冒泡的问题</title>
+    <script src="js/jquery-2.0.3.js"></script>
+</head>
+<body>
+    <div id="div0">
+        <div id="div1" >
+            <div id="div2">
+                <div id="event_source" style="width:200px;height:200px;background:red;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+//    $(function(){
+//        /*阻止了事件的冒泡*/
+//        $('#div2').click(function(event){
+//                event.stopPropagation();
+//        });
+//    })
+    document.getElementById('event_source').addEventListener('click',function(event){
+        alert('current is body' );
+    },true);
+    document.getElementById('div2').addEventListener('click',function(event){
+        alert('current is' + this.id);
+    },true);
+    document.getElementById('div1').addEventListener('click',function(event){
+        alert('current is' + this.id);
+    },true);
+    document.getElementById('div0').addEventListener('click',function(event){
+        alert('current is' + this.id);
+        },true);
+    document.body.addEventListener('click',function(event){
+        alert('current is' + this.id);
+        },true);
+    /*事件的捕获和事件的冒泡都可以通过使用false,true的切换来进行*/
+</script>

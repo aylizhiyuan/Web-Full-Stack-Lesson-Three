@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		body,ul,li,a,img,p{margin: 0;padding: 0}
+		li{list-style: none}
+
+		/*垂直滚动样式*/
+		.slider-box{width: 150px;height:332px;border: 1px solid #ccc; margin: 30px auto}
+		.slider-btn{height: 30px;text-indent: -9999px;background-image: url(./ico1_bg.gif);background-repeat: no-repeat;display: block;}
+		.slider-next{background-position:60px -85px }
+		.slider-prev{background-position:60px -185px }
+		.slider-prev:hover{background-position:60px -133px }
+		.slider-next:hover{background-position:60px -44px }
+		.slider-wrapper{height: 272px;position: relative;overflow: hidden;}
+		.slider-wrapper ul{position: absolute;top: 0;width: 100%;left: 0}
+		.slider-wrapper li{height: 94px;list-style: none;}
+		.slider-wrapper li img{height: 84px;width: 150px;border: none;}
+
+	</style>
+	<script src='jquery-2.0.3.js'></script>
+	<script src='jquery.slider.js'></script>
+	<script>
+		$(function(){
+			$('.slider-box').mySlider({
+					speed: 300,
+					direction: 'top', //  运动方向 可选 left,top
+					prevClass: 'slider-prev',
+					nextClass: 'slider-next',
+					prevClass: 'slider-prev',
+					wrapperClass: 'slider-wrapper',
+					moveClass: 'slider-move'
+			});
+		});
+	</script>
+</head>
+<body>
+	    <div class="slider-box">
+	    		<a href='javascript:;' class="slider-prev slider-btn">向上</a>
+	    	    <div class="slider-wrapper">
+	    	    	    <ul class='slider-move'>
+	    	    	    	<li><a href="" title=""><img src='1.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='2.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='3.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='4.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='5.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='6.jpg'/></a></li>
+	    	    	    	<li><a href="" title=""><img src='7.jpg'/></a></li>
+	    	    	    </ul>
+	    	    </div>
+	    		<a href='javascript:;' class="slider-next slider-btn">向下</a>
+	    </div>
+</body>
+</html>

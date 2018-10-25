@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片翻牌旋转切换</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        li {
+            list-style:none;
+        }
+        #brand {
+            width:330px;
+            height:400px;
+            border:1px solid #ddd;
+            box-shadow:0px 0px 5px #ddd;
+            margin:30px auto;
+        }
+        #brand .title {
+            width:100%;
+            height:35px;
+            line-height:35px;
+            font-size:16px;
+            margin-top:4px;
+            border-bottom:2px solid #33261c;
+            text-align:center;
+            color:#33261c;
+        }
+        #brand .bd-box {
+            width:284px;
+            height:358px;
+            overflow:hidden;
+            padding:0 24px;
+        }
+        #brand .bd-box li {
+            float:left;
+            width:122px;
+            height:77px;
+            overflow:hidden;
+            position:relative;
+            margin:10px 10px 0px 10px;
+        }
+        #brand .bd-box li img {
+            width:120px;
+            height:75px;
+            border:1px solid #e9e8e8;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:2;
+            overflow:hidden;
+        }
+        #brand .bd-box li span {
+            width:120px;
+            height:0px;
+            border:1px solid #e9e8e8;
+            position:absolute;
+            left:0;
+            top:38px;
+            z-index:1;
+            text-align:center;
+            line-height:75px;
+            font-size:14px;
+            color:#fff;
+            background:#ffa340;
+            font-weight:bold;
+            overflow:hidden;
+            display:none;
+        }
+        #brand .bd-box li a {
+            width:120px;
+            height:75px;
+            position:absolute;
+            left:0px;
+            top:0px;
+            z-index:3;
+        }
+    </style>
+</head>
+<body>
+    <div id="brand">
+        <div class="title">
+            热门品牌推荐
+        </div>
+        <ul class="bd-box">
+            <li><a href="#">
+                <img src="images/11.jpg"/>
+                <span>肌龄</span>
+            </a></li>
+            <li><a href="#">
+                <img src="images/22.jpg"/>
+                <span>肌龄</span>
+            </a></li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/33.jpg" />
+                <span>肌龄</span>
+            </li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/44.jpg" />
+                <span>肌龄</span>
+            </li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/55.jpg" />
+                <span>肌龄</span>
+            </li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/66.jpg" />
+                <span>肌龄</span>
+            </li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/77.jpg" />
+                <span>肌龄</span>
+            </li>
+            <li>
+                <a href="#"> </a>
+                <img src="images/88.jpg" />
+                <span>肌龄</span>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+</html>
+<script>
+    $(function(){
+        var aLi = $('#brand .bd-box li');
+        var aImg = $('#brand .bd-box li img');
+        var aSpan = $('#brand .bd-box li span');
+        aLi.each(function(index){
+            $(this).mouseover(function(){
+                aSpan.eq(index).stop();
+                aImg.eq(index).stop();
+                aImg.eq(index).css({zIndex:1}).animate({
+                    top:37,
+                    height:0
+                },80,'',function(){
+                    $(this).hide();
+                    aSpan.eq(index).show().css({zIndex:2}).animate({
+                        top:0,
+                        height:75
+                    },80)
+
+                })
+
+            });
+            $(this).mouseout(function(){
+                aSpan.eq(index).stop();
+                aImg.eq(index).stop();
+                aSpan.eq(index).css({zIndex:1}).animate({
+                    top:37,
+                    height:0
+                },80,'',function(){
+                    $(this).hide();
+                    aImg.eq(index).show().css({zIndex:2}).animate({
+                        top:0,
+                        height:75
+                    },80)
+                })
+            })
+        })
+    })
+
+</script>

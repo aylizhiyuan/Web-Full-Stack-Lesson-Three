@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-2.0.3.js" type="text/javascript"></script>
+    <style>
+        /* 图片加载 */
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+        }
+
+        #photo {
+            width:900px;
+            margin:0 auto;
+            background:#fff;
+            padding:10px 0 0 0;
+
+        }
+        #photo:after {
+            clear: both;
+            content: ".";
+            height: 0;
+            visibility: hidden;
+            font-size: 0;
+            display: block;
+
+        }
+        #photo dl {
+            width:225px;
+            height:270px;
+            float:left;
+            margin:5px 0 15px 0;
+        }
+        #photo dl dt {
+            width:200px;
+            height:250px;
+            margin:0 auto;
+        }
+        #photo dl dt img {
+            display:block;
+            cursor:pointer;
+        }
+        #photo dl dd {
+            height:25px;
+            line-height:25px;
+            text-align:center;
+        }
+        #photo_big {
+            width:620px;
+            height:511px;
+            border:1px solid #ccc;
+            position:absolute;
+            display:none;
+            z-index:9999;
+            background:#fff;
+        }
+        #photo_big h2 {
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            font-size:14px;
+            letter-spacing:1px;
+            color:#666;
+            background:url(images/login_header.png) repeat-x;
+            margin:0;
+            padding:0;
+            border-bottom:1px solid #ccc;
+            cursor:move;
+        }
+        #photo_big h2 img {
+            float:right;
+            position:relative;
+            top:14px;
+            right:8px;
+            cursor:pointer;
+        }
+        #photo_big .big {
+            width:620px;
+            height:460px;
+            padding:10px 0 0 0;
+            background:#333;
+        }
+        #photo_big .big img {
+            display:block;
+            margin:0 auto;
+            position:relative;
+            top:190px;
+        }
+        #photo_big .big strong {
+            display:block;
+            width:100px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            background:#000;
+            opacity:0;
+            filter:alpha(opacity=0);
+            font-size:60px;
+            color:#fff;
+            cursor:pointer;
+            position:absolute;
+        }
+        #photo_big .big strong.sl {
+            top:210px;
+            left:20px;
+        }
+        #photo_big .big strong.sr {
+            top:210px;
+            right:20px;
+        }
+        #photo_big .big span {
+            display:block;
+            width:300px;
+            height:450px;
+            background:#000;
+            opacity:0;
+            filter:alpha(opacity=0);
+            position:absolute;
+            cursor:pointer;
+        }
+        #photo_big .big span.left {
+            top:50px;
+            left:10px;
+        }
+        #photo_big .big span.right {
+            top:50px;
+            right:10px;
+        }
+        #photo_big .big em {
+            position:absolute;
+            top:480px;
+            right:20px;
+            color:#fff;
+            font-size:14px;
+            font-style:normal;
+        }
+        #screen {
+            position:absolute;
+            filter:alpha(opacity=0);
+            opacity:0;
+            z-index:9998;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            background: black;
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="content" style="width:1170px;height:1100px;margin:0 auto;"></div>
+<!--图片预加载-->
+<div id="photo">
+    <dl>
+        <dt><img xsrc="images/p1.jpg" bigsrc="images/p1big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p2.jpg" bigsrc="images/p2big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p3.jpg" bigsrc="images/p3big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p4.jpg" bigsrc="images/p4big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p5.jpg" bigsrc="images/p5big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p6.jpg" bigsrc="images/p6big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p7.jpg" bigsrc="images/p7big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p8.jpg" bigsrc="images/p8big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p9.jpg" bigsrc="images/p9big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p10.jpg" bigsrc="images/p10big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p11.jpg" bigsrc="images/p11big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+    <dl>
+        <dt><img xsrc="images/p12.jpg" bigsrc="images/p12big.jpg" src="images/wait_load.jpg" class="wait_load" alt="" /></dt>
+        <dd>延迟加载图片</dd>
+    </dl>
+
+
+</div>
+<!--图片预加载大图弹出框-->
+<div id="photo_big">
+    <h2><img src="images/close.png" alt="" class="close" />图片预加载</h2>
+    <div class="big">
+        <img src="images/loading.gif" alt="" />
+        <strong class="sl">&lt;</strong>
+        <strong class="sr">&gt;</strong>
+        <span class="left"></span>
+        <span class="right"></span>
+        <em class="index"></em>
+    </div>
+</div>
+
+<!--遮罩层-->
+<div id="screen"></div>
+</body>
+</html>
+<script>
+
+    $(function(){
+        /*到达图片显示区域才加载图片*/
+        function _wait_load(){
+            setTimeout(function(){
+                $('.wait_load').each(function(i){
+                    if($(window).height() + $(document).scrollTop() >= $(this).offset().top){
+                        $(this).attr('src',$(this).attr('xsrc')).animate({
+                            opacity:1
+                        },500);
+                    }
+                });
+            },100);
+        };
+        _wait_load();
+        $('.wait_load').css('opacity','0');
+        $(document).on('scroll',_wait_load);
+        $(window).on('resize',_wait_load);
+        //遮罩层永远都是100%
+        function getSrceenWH(){
+            var w = $(window).width() + $(document).scrollLeft();
+            var h = $(window).height() + + $(document).scrollTop();
+            $('#screen').width(w).height(h);
+        };
+        /*点击弹出图片*/
+        function center(){
+            var width = ($(window).width() - $('#photo_big').width())/2 + $(document).scrollLeft();
+            var height = ($(window).height() - $('#photo_big').height())/2 + $(document).scrollTop();
+            $('#photo_big').css('left',width);
+            $('#photo_big').css('top',height);
+        };
+        getSrceenWH();
+        center();
+        $(document).on('scroll',center);
+        $(document).on('scroll',getSrceenWH);
+        $(window).on('resize',center);
+        $(window).on('resize',getSrceenWH);
+        //点击某一张图片
+        $('.wait_load').click(function(){
+            $('#screen').css('display','block').animate({
+                opacity:0.6
+            },500);
+            $('#photo_big').css('display','block');
+            //禁止滚动条
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+            //图片加载进来
+            //创建一个Image对象，然后将大图的地址给它.当它加载完毕之后，再将它替换掉loading的图片,并调整它的位置
+            var temp_img = new Image();
+            temp_img.src = $(this).attr('bigsrc');
+            $(temp_img).on('load',function(){
+                $('#photo_big .big img').attr('src',temp_img.src).animate({
+                    opacity:1
+                }).css({'width':'600px','height':'450px','top':0});
+
+            });
+            //当前的DL集合
+            var children = $(this).parent().parent();
+            //相邻的上一个DL集合
+            var prev = children.prev().index();
+            //相邻的下一个DL集合
+            var next = children.next().index();
+            var prev_img = new Image();
+            var next_img = new Image();
+            prev_img.src = $('.wait_load').eq(prev).attr('bigsrc');
+            next_img.src = $('.wait_load').eq(next).attr('bigsrc');
+            //上一张图片给了class 为left的span
+            $('#photo_big .big .left').attr('src', prev_img.src);
+            //下一张图片给了class 为right的span
+            $('#photo_big .big .right').attr('src', next_img.src);
+            //当前的下标在img的index属性上挂载着
+            $('#photo_big .big img').attr('index', children.index());
+            $('#photo_big .big .index').html(parseInt(children.index()) + 1 + '/' + $('#photo dl dt img').length);
+        });
+        $('.close').click(function(){
+            $('#screen').css('display','none').animate({
+                opacity:0
+            },500);
+            $('#photo_big').css('display','none');
+            //禁止滚动条
+            document.body.style.overflow = 'auto';
+            document.documentElement.style.overflow = 'auto';
+            //弹窗关闭后，加载图片显示
+            $('#photo_big .big img').attr('src', 'images/loading.gif').css('width', '32px').css('height', '32px').css('top', '190px');
+        });
+        /*上一张，下一张的显示*/
+        $('#photo_big .big .left').hover(function(){
+            $('#photo_big .big .sl').animate({
+                opacity:0.5
+            });
+
+        },function(){
+            $('#photo_big .big .sl').animate({
+                opacity:0
+            });
+        });
+        $('#photo_big .big .right').hover(function () {
+            $('#photo_big .big .sr').animate({
+               opacity:0.5
+            });
+        }, function () {
+            $('#photo_big .big .sr').animate({
+               opacity:0
+            });
+        });
+        /*图片的预加载*/
+        //获取某一个节点的上一个节点的索引
+        function prevIndex(current, parent) {
+            var length = parent.children.length;
+            if (current == 0) return length - 1;
+            return parseInt(current) - 1;
+        };
+
+        //获取某一个节点的下一个节点的索引
+        function nextIndex(current, parent) {
+            var length = parent.children.length;
+            if (current == length - 1) return 0;
+            return parseInt(current) + 1;
+        };
+        //上一张
+        $('#photo_big .big .left').click(function(){
+            $('#photo_big .big img').attr('src','images/loading.gif').css('width', '32px').css('height', '32px').css('top', '190px');
+            var current_img = new Image();
+            $(current_img).on('load',function(){
+                $('#photo_big .big img').attr('src',current_img.src).animate({
+                    opacity:1
+                }).css({'width':'600px','height':'450px','top':0});
+            });
+            current_img.src = $(this).attr('src');
+            var index = $('#photo_big .big img').attr('index');
+            var children = $('#photo dl dt img').eq(prevIndex($('#photo_big .big img').attr('index'), $('#photo').get(0))).parent().parent();
+            //相邻的上一个DL集合
+            var prev = children.prev().index();
+            //相邻的下一个DL集合
+            var next = children.next().index();
+            var prev_img = new Image();
+            var next_img = new Image();
+            prev_img.src = $('.wait_load').eq(prev).attr('bigsrc');
+            next_img.src = $('.wait_load').eq(next).attr('bigsrc');
+            //上一张图片给了class 为left的span
+            $('#photo_big .big .left').attr('src', prev_img.src);
+            //下一张图片给了class 为right的span
+            $('#photo_big .big .right').attr('src', next_img.src);
+            //当前的下标在img的index属性上挂载着
+            $('#photo_big .big img').attr('index', children.index());
+            $('#photo_big .big .index').html(parseInt(children.index()) + 1 + '/' + $('#photo dl dt img').length);
+        });
+        //下一张
+        $('#photo_big .big .right').click(function(){
+            $('#photo_big .big img').attr('src','images/loading.gif').css('width', '32px').css('height', '32px').css('top', '190px');
+            var current_img = new Image();
+            $(current_img).on('load',function(){
+                $('#photo_big .big img').attr('src',current_img.src).animate({
+                    opacity:1
+                }).css({'width':'600px','height':'450px','top':0});
+            });
+            current_img.src = $(this).attr('src');
+            var index = $('#photo_big .big img').attr('index');
+            var children = $('#photo dl dt img').eq(nextIndex($('#photo_big .big img').attr('index'), $('#photo').get(0))).parent().parent();
+            //相邻的上一个DL集合
+            var prev = children.prev().index();
+            //相邻的下一个DL集合
+            var next = children.next().index();
+            var prev_img = new Image();
+            var next_img = new Image();
+            prev_img.src = $('.wait_load').eq(prev).attr('bigsrc');
+            next_img.src = $('.wait_load').eq(next).attr('bigsrc');
+            //上一张图片给了class 为left的span
+            $('#photo_big .big .left').attr('src', prev_img.src);
+            //下一张图片给了class 为right的span
+            $('#photo_big .big .right').attr('src', next_img.src);
+            //当前的下标在img的index属性上挂载着
+            $('#photo_big .big img').attr('index', children.index());
+            $('#photo_big .big .index').html(parseInt(children.index()) + 1 + '/' + $('#photo dl dt img').length);
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+    })
+</script>

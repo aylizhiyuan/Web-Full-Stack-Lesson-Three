@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //显示多图配图的居中方案
+    function centerimg(){
+        for (var i = 0; i < $('.imgs img').length; i++) {
+            if ($('.imgs img').eq(i).width() > 120) {
+                $('.imgs img').eq(i).css('left', -($('.imgs img').eq(i).width() - 120) / 2);
+            }
+            else {
+                $('.imgs img').eq(i).width(120);
+            }
+            if ($('.imgs img').eq(i).height() > 120) {
+                $('.imgs img').eq(i).css('top', -($('.imgs img').eq(i).height() - 120) / 2);
+            }
+            else {
+                $('.imgs img').eq(i).height(120);
+            }
+        }
+    }
+</script>

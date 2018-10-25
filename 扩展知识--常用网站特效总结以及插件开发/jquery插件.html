@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <script type="text/javascript" src="js/jquery-lzyTab.js"></script>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="http://www.webo.com/liuwayong">我的微博</a>
+        </li>
+        <li>
+            <a href="http://http://www.cnblogs.com/Wayou/">我的博客</a>
+        </li>
+        <li>
+            <a href="http://wayouliu.duapp.com/">我的小站</a>
+        </li>
+    </ul>
+    <p>这是p标签不是a标签，我不会受影响</p>
+
+</body>
+</html>
+<script>
+    $(function(){
+        $('a').lzy('init',{
+            'color':'green',
+            'fontSize':'30px',
+        });
+    })
+
+</script>

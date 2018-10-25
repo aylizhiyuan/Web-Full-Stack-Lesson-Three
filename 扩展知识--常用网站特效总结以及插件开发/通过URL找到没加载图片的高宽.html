@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    //通过url得到图片的长和高
+    function imgLoadEvent(callback,url){
+        var img = new Image();
+        img.onreadystatechange = function(){
+            if(this.readyState == 'complete'){
+                callback({'w':img.width,'h':img.height});
+            }
+        };
+        img.onload = function(){
+            if(this.complete == true){
+                callback({'w':img.width,'h':img.height});
+
+            }
+        };
+        img.onerror = function(){
+            callback({'w':0,'h':0});
+        };
+        img.src = url;
+    }
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>置顶</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        ul.scroll {
+            width:15px;
+            position:fixed;
+            top:40%;
+            right:0;
+            float:right;
+            display:block;
+        }
+        ul.scroll li {
+            height:40px;
+            float:right;
+            display:block;
+            position:relative;
+        }
+        .sct {
+            background:url(images/scroll.png) no-repeat 0 0;
+        }
+        .scb {
+            background:url(images/scroll.png) no-repeat 0 -80px;
+        }
+        ul.scroll li  a {
+            display:block;
+            color:#fff;
+        }
+        ul.scroll li  a:hover {
+            text-decoration:none;
+        }
+        ul.scroll li div {
+            display:none;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+        .scroll_t {
+            background: #d03f42;
+        }
+        .scroll_b {
+            background: #383838;
+        }
+        .scroll_t, .scroll_b {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 20px 0 0 20px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body style="height:2000px;background:#f2f2f2;">
+<ul class="scroll">
+    <li class="sct">
+        <a href="#">&nbsp;</a>
+        <div>
+            <a class="scroll_t">返回顶部</a>
+        </div>
+    </li>
+    <li class="scb">
+        <a href="#">&nbsp;</a>
+        <div>
+            <a class="scroll_b">转到底部</a>
+        </div>
+    </li>
+</ul>
+</body>
+</html>
+<script>
+    $(function(){
+
+        $('.scroll_t').click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
+        $('.scroll_b').click(function(){$('html,body').animate({scrollTop: document.body.clientHeight+'px'}, 800);});
+        $("ul.scroll li").hover(function() {
+            $(this).find("div").stop()
+                    .animate({right: "0", opacity:1}, "fast")
+                    .css("display","block")
+        }, function() {
+            $(this).find("div").stop()
+                    .animate({right: "0", opacity: 0}, "fast")
+        });
+    })
+</script>

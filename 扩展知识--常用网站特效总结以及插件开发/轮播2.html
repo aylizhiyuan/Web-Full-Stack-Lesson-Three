@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <style>
+        /*banner区域 左侧*/
+        .banner {width: 880px;height: 240px;position: relative;  }
+        .banner .banner_img_a{position: absolute;display: none;}
+        .banner img{width: 880px;height: 240px; }
+        .banner .show{display: block; }
+        .banner .indicator {position: absolute;left: 10px;bottom: 10px; }
+        .banner .indicator span{ width:24px; height:24px;cursor: pointer; background-color:rgba(0,0,0,0.7);  float: left; margin-right: 2px; color: #fff; line-height:24px;text-align:center;}
+        .banner .indicator span.cur, .banner_box .banner .indicator span:hover { width:22px; height:22px;line-height:22px; border:1px solid #FFB400;}
+        .banner .page {position: absolute;right: 10px;bottom: 10px; z-index:2;}
+        .banner .page span{ width:24px; height:24px;float: left; background-color:rgba(0,0,0,0.7);cursor: pointer; color: #fff; margin-right: 2px; line-height: 24px; text-align: center; font-family:"\5B8B\4F53"}
+        .banner .page span:hover { width:22px; height:22px;line-height:22px; border:1px solid #FFB400;}
+    </style>
+</head>
+<body>
+<div class="banner">
+
+    <a class="banner_img_a show" href="#" target="_blank" style="display: none;">
+        <img src="http://img.zhuangbeiku.com/4d5699cbc30af79ae833fb8ff7e95583" alt="">
+    </a>
+
+    <a class="banner_img_a" href="#" target="_blank" style="display: none;">
+        <img src="http://img.zhuangbeiku.com/2200fd8829fdfba3ebdef19b6b1b36d9" alt="">
+    </a>
+
+    <a class="banner_img_a" href="#" target="_blank" style="display: inline;">
+        <img src="http://img.zhuangbeiku.com/878c2a8f4cac3af805cd29d7ef66852e" alt="">
+    </a>
+
+    <a class="banner_img_a" href="#" target="_blank" style="display: none;">
+        <img src="http://img.zhuangbeiku.com/3730068b95bed418240b4c264f34d313" alt="">
+    </a>
+
+    <a class="banner_img_a" href="#" target="_blank" style="display: none;">
+        <img src="http://img.zhuangbeiku.com/e62451fecc8fc737fd9542ecc2049f9e" alt="">
+    </a>
+
+    <div class="indicator">
+
+        <span class="">1</span>
+
+        <span class="">2</span>
+
+        <span class="cur">3</span>
+
+        <span class="">4</span>
+
+        <span class="">5</span>
+
+    </div>
+    <div class="page">
+        <span class="prev">&lt;</span>
+        <span class="next">&gt;</span>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+
+
+        // 轮播
+        var index = 0;
+        function getIndexNext(){
+            return index>=$(".banner .banner_img_a").length-1?0:index+1;
+        }
+        function getIndexPrev(){
+            return index<=0?$(".banner .banner_img_a").length-1:index-1;
+        }
+        var showNextImg = function(){
+            index = getIndexNext();
+            showSliderImg();
+        };
+        var showPrevImg = function(){
+            index = getIndexPrev();
+            showSliderImg();
+        };
+        var sliderTimer = window.setInterval(showNextImg,2000);
+        function showSliderImg(){
+            $(".banner .banner_img_a").eq(index).show();
+            $(".banner .banner_img_a").eq(index).siblings(".banner_img_a").hide();
+            $('.banner .indicator span').removeClass("cur");
+            $('.banner .indicator span').eq(index).addClass("cur");
+        }
+        // slider hover状态
+        $('.banner .indicator span').hover(function(){
+            window.clearInterval(sliderTimer);
+            index = $('.banner .indicator span').index(this);
+            showSliderImg();
+        },function(){
+            sliderTimer = window.setInterval(showNextImg,2000);
+        }) ;
+        // previous next
+        $('.banner .page span').hover(function(){
+            window.clearInterval(sliderTimer);
+        },function(){
+            sliderTimer = window.setInterval(showNextImg,2000);
+        }) ;
+        $('.banner .page .prev').click(function(){
+            showPrevImg();
+        });
+        $('.banner .page .next').click(function(){
+            showNextImg();
+        });
+    })
+</script>

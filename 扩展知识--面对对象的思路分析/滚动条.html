@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动条</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        #main {
+            width:1000px;
+            height:2000px;
+            margin:0 auto;
+        }
+        #scrollTop {
+            width:100px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            background-color:red;
+            color:#fff;
+            position:fixed;
+            top:50px;
+            right:0px;
+            opacity: 0.5;
+            border-radius: 10px;
+        }
+        #scrollTop:hover {
+            opacity: 1;
+        }
+        #scrollBottom {
+            width:100px;
+            height:100px;
+            line-height:100px;
+            text-align:center;
+            background-color:red;
+            color:#fff;
+            position:fixed;
+            bottom:50px;
+            right:0;
+            opacity: 0.5;
+            border-radius: 10px;
+        }
+        #scrollBottom:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="main"></div>
+<div id="scrollTop">向上滚动</div>
+<div id="scrollBottom">向下滚动</div>
+</body>
+</html>
+<script>
+    $(function(){
+        //1.找到发生事件的按钮
+        $('#scrollTop').click(function(){
+            //2.要让页面的scrollTop值为0
+            $('body').animate({scrollTop:0 + 'px'},800);
+        })
+        //2.向下
+        $('#scrollBottom').click(function(){
+            var height = $(document).height();
+            $('body').animate({'scrollTop':height + 'px'},800);
+        })
+    })
+</script>

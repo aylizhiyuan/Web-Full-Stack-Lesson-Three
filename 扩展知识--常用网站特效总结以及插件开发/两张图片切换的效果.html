@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>两张图片切换的效果</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        #sidebar {
+            width:188px;
+            height:auto;
+            border:1px solid #e9e5e2;
+            margin:30px auto;
+        }
+        #sidebar .hd {
+            width:100%;
+            height:28px;
+            background:#e9e5e2;
+            line-height:28px;
+            font-size:18px;
+            color:#7f746e;
+            text-indent:12px;
+            font-weight:bold;
+        }
+        #sidebar ul {
+            width:180px;
+            height:auto;
+            padding:0px 4px 5px 4px;
+
+        }
+        #sidebar ul li {
+            margin-top:5px;
+            width:180px;
+            height:150px;
+            position:relative;
+            overflow:hidden;
+            cursor:pointer;
+        }
+        #sidebar ul li .imgBox {
+            width:360px;
+            position:absolute;
+            left:0;
+            top:0;
+            height:150px;
+            z-index: 1;
+
+        }
+        #sidebar ul li .imgBox img {
+            float:left;
+        }
+        #sidebar ul li .imgTitle {
+            width:100%;
+            height:48px;
+            bottom:-24px;
+            left:0;
+            z-index:2;
+            position:absolute;
+            font-size:12px;
+        }
+        #sidebar ul li .imgTitle div {
+            width:100%;
+            height:48px;
+            position:relative;
+        }
+        #sidebar ul li .imgTitle p {
+            width:100%;
+            height:24px;
+            line-height: 24px;
+            color:#fff;
+            text-indent: 10px;
+            position:absolute;
+            left:0;
+            top:0;
+        }
+        #sidebar ul li .red P{
+            background:#d96160;
+        }
+        #sidebar ul li .cyan P{
+            background:#134752;
+        }
+        #sidebar ul li .blue P{
+            background:#2271af;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="sidebar">
+    <div class="hd">专辑推荐</div>
+    <ul>
+        <li>
+            <div class="imgBox">
+                <img src="images/1_1.jpg">
+                <img src="images/1_2.jpg">
+            </div>
+            <div class="imgTitle red">
+                <div>
+                    <p>
+                        <span>几何为网-极致绚烂</span>
+                    </p>
+                    <p style="top:24px">
+                        <span>COCOON/可可尼</span>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class='imgBox'>
+                <img src="images/2_2.jpg">
+                <img src="images/2_1.jpg">
+            </div>
+            <div class='imgTitle cyan'>
+                <div>
+                    <p>
+                        <span>2013春印象</span>
+                    </p>
+                    <p style="top:24px;">
+                        <span>INSUN/恩裳 </span>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class='imgBox'>
+                <img src="images/3_2.jpg">
+                <img src="images/3_1.jpg">
+            </div>
+            <div class='imgTitle blue'>
+                <div>
+                    <p>
+                        <span>Nemow/南梦</span>
+                    </p>
+                    <p style="top:24px;">
+                        <span>JNBY/江南布衣 </span>
+                    </p>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+</body>
+</html>
+<script>
+    $(function(){
+        var aLi = $('#sidebar ul li');
+        var oImg,aP;
+        aLi.hover(function(){
+            oImg = $(this).find('.imgBox');
+            aP = $(this).find('p');
+            oImg.stop().animate({
+                left:-180
+            },450);
+            aP.eq(0).stop().animate({
+                top:24
+            },450);
+            aP.eq(1).stop().animate({
+                top:0
+            },450);
+
+        },function(){
+            oImg.stop().animate({
+                left:0
+            },450);
+            aP.eq(0).stop().animate({
+                top:0
+            },450);
+            aP.eq(1).stop().animate({
+                top:24
+            },450);
+
+        })
+
+    })
+</script>

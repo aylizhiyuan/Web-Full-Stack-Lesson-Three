@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link href="css/base.css" rel="stylesheet"/>
+    <style>
+        #select {
+            width:200px;
+            height:300px;
+            margin:0 auto;
+            border:1px solid #ccc;
+
+        }
+        #select .dropmenu {
+            display:block;
+            width:100px;
+            height:50px;
+            border:1px solid #ccc;
+            background: #ddd;
+            line-height:50px;
+            text-align:center;
+            margin:0 auto;
+        }
+        #select .dropdown {
+            width:100px;
+            height:auto;
+            margin:0 auto;
+            border:1px solid #ccc;
+            text-align: center;
+            padding:10px 0;
+            display:none;
+        }
+        #select .dropdown li {
+            border-bottom:1px solid #ccc;
+            line-height:30px;
+        }
+        #select .dropdown li:last-child {
+            border:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="select">
+        <div class="drop">
+            <a href="#" class="dropmenu">产品中心</a>
+            <ul class="dropdown">
+                <li><a href="#">产品项目1</a></li>
+                <li><a href="#">产品项目1</a></li>
+                <li><a href="#">产品项目1</a></li>
+                <li><a href="#">产品项目1</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        $('#select .drop').hover(function(){
+            $('#select .dropdown').show();
+        },function(){
+            $('#select .dropdown').hide();
+        })
+    })
+</script>

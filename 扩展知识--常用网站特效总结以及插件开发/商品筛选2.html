@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>商城多条件搜索功能2</title>
+	<style type="text/css">
+		div{width:768px;}
+		ul{list-style:none;}
+		ul li{overflow:hidden;zoom:1;border-bottom:1px dashed #dfdfdf;font-size:12px;}
+		ul li .name{float:left;width:100px;height:22px;padding-top:15px;font-weight:bold;text-align:right;}
+		ul li .intro{float:left;width:620px;padding-top:15px;}
+		ul li .intro a{display:inline-block;margin:0 10px 20px 0;color:#3366cc;text-decoration:none;}
+		ul li .intro a:hover,{color:#fff;background:#3399cc;}
+		ul li.chosed .intro span{display:none;margin-left:10px;padding:5px 5px 5px 5px;background:none;color:#ff6600;border:1px solid #ff6600;}
+		ul li.chosed .intro span em{display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;background:#ff6600;color:#fff;font-size:14px;font-weight:bold;font-style:normal;cursor:pointer;}
+		ul li.chosed .intro a.clear{margin-left:10px;background:none;color:#ff6600;font-weight:bold;border:none;}
+		.selected{color:#fff;background:#3399cc;}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><span class="name">品　　牌：</span><span class="intro">
+				<a href="#">苹果</a>
+				<a href="#">小米</a>
+				<a href="#">华为</a>
+				<a href="#">联想</a>
+				<a href="#">中兴</a>
+				<a href="#">夏新</a>
+				<a href="#">海信</a>
+				<a href="#">酷派</a>
+				<a href="#">DELL</a>
+				<a href="#">HTC</a>
+				<a href="#">索尼</a>
+				<a href="#">索尼爱立信</a>
+				<a href="#">三星</a>
+				<a href="#">诺基亚</a>
+				<a href="#">海尔</a>
+				<a href="#">TCL</a>
+				<a href="#">飞利浦</a>
+				<a href="#">摩托罗拉</a>
+				<a href="#">黑莓</a>
+				<a href="#">LG</a>
+				<a href="#">爱国者</a>
+				<a href="#">天语</a>
+				<a href="#">英华达</a>
+				<a href="#">长虹</a>
+				<a href="#">万利达</a>                   
+			</span></li>
+			<li><span class="name">价格范围：</span><span class="intro">
+				<a href="#">1-499</a>
+				<a href="#">500-999</a>
+				<a href="#">1000-1999</a>
+				<a href="#">2000-2999</a>
+				<a href="#">3000-4999</a>
+				<a href="#">5000以上</a>     
+			</span></li>
+			<li><span class="name">操作系统：</span><span class="intro">
+				<a href="#">iOS</a>
+				<a href="#">安卓</a>
+				<a href="#">塞班</a>
+				<a href="#">百度易平台</a>   
+			</span></li>
+			<li><span class="name">优惠活动：</span><span class="intro">
+				<a href="#">存话费送手机</a>
+				<a href="#">买手机送话费</a>
+				<a href="#">老用户优惠购机（支持合约到期提前续约）</a>
+				<a href="#">只买手机</a>
+				<a href="#">分期付款</a>  
+			</span></li>
+			<li><span class="name">特　　点：</span><span class="intro">
+				<a href="#">双卡双待</a>
+				<a href="#">千元智能机</a>
+				<a href="#">大屏（4.0寸以上）</a>
+			</span></li>
+			<li class="chosed" id="chosed"><span class="name">您已选择：</span><span class="intro">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<!-- <a href="#" class="clear">清除筛选条件</a> -->
+			</span></li>
+		</ul>
+	</div>
+<script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("li .intro a").click(function(){
+			var $chosed = $(".chosed .intro");
+			var li_index = $(this).closest("li").index();
+			var txt = $(this).text()+"<em>×</em>";
+			$(this).siblings().removeClass("selected").css("color","#3366cc").end().addClass("selected").css("color","#fff");
+			//把每个li里面的a插入到对应的span里面，这样同时解决了两个问题：修改选项同步，每个li只能有一个span
+			$chosed.find("span").eq(li_index).html(txt).css("display","inline-block");
+			// 关闭span
+			$(".chosed .intro em").click(function(){
+				var index = $(this).parent("span").index();
+				$("li:not('.chosed')").eq(index).find(".intro a").removeClass("selected").css("color","#3366cc");
+				$(this).parent("span").empty().css("display","none");
+			});
+			//当span的个数大于1就会出现clear按钮把所有的span都清除
+			var len = $chosed.find("span").not(":empty").length;
+			//console.log(len);
+			if(len > 2){
+				var clr = "<a href='#' class='clear' id='clear'>清除筛选条件</a>";
+				$("#clear").remove();
+				$(".chosed .intro").append(clr);
+			}
+			$("a.clear").click(function(){
+				$(".chosed .intro span").text("").css("display","none");
+				$("li:not('.chosed')").find(".intro a").removeClass("selected").css("color","#3366cc");
+				$(this).remove();
+			});
+		});
+	});
+
+</script>
+</body>
+</html>

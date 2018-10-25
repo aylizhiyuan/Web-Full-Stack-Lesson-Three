@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab切换第一版</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,li,ol,li {
+            list-style:none;
+        }
+        .menu {
+            float:left;
+            height:30px;
+            line-height:30px;
+            border-right:1px solid #ccc;
+        }
+        .menu li {
+            float:left;
+            width:100px;
+            text-align:center;
+            border:1px solid #ccc;
+            border-right:none;
+        }
+        .main {
+            float:left;
+            margin-bottom:20px;
+            clear:left;
+        }
+        .menu .on {
+            border-top:1px solid #a40000;
+            border-bottom:1px solid #fff;
+        }
+        .tab {
+            height:200px;
+            width:403px;
+            float:left;
+            border:1px solid #ccc;
+            border-top:none;
+            line-height:200px;
+            text-align:center;
+            display:none;
+        }
+    </style>
+</head>
+<body>
+<div class="tabs">
+    <ul class="menu">
+        <li class="on">AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+        <li>DDD</li>
+    </ul>
+    <div class="main">
+        <div class="tab" style="display:block;">AAA</div>
+        <div class="tab">BBB</div>
+        <div class="tab">CCC</div>
+        <div class="tab">DDD</div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    //JQ版本的切换
+    $(function(){
+        $('.menu li').mouseover(function(){
+            var index = $(this).index();
+            $('.menu li').eq(index).addClass('on').siblings().removeClass('on');
+            $('.main div').eq(index).show().siblings().hide();
+        })
+    })
+    //面对对象的思路
+    var tab = function(ele){
+        this.init(ele);
+    }
+    tab.prototype.init = function(ele){
+        $(ele).mouseover(function(){
+            var index = $(this).index();
+            $(ele).eq(index).addClass('on').siblings().removeClass('on');
+            $('.main div').eq(index).show().siblings().hide();
+        })
+    }
+    window.onload = function(){
+        new tab('.menu li');
+    }
+</script>

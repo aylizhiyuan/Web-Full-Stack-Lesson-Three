@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+<style type="text/css"> 
+*{ margin:0; padding:0;}
+body { font:12px/1.8 Arial; color:#666;}
+h1.tit-h1 { font-size:38px; text-align:center; margin:30px 0 15px; color:#f60;}
+.go-back{ text-align:center; border-top:1px dashed #ccc; padding:10px; margin-top:20px; font-size:40px;}
+.wrap{ width:500px; margin:0 auto; border:1px dashed #ccc; background:#f8f8f8; padding:20px;}
+#news_rolling{ height:96px; overflow:hidden;}/*这个高度设置配合每次滚动的行数可实现多行滚动*/
+#news_rolling li{ line-height:24px; height:24px; border-bottom:1px #CCCCCC dashed;}
+a{text-decoration:none; color:#666666; float:left; margin-right:15px;}
+	body,ul,ol,h2,h3,h4,h5,p,dl,dt,dd,form{padding:0;margin:0;}img{border:none;}li{list-style:none;}a{text-decoration:none;outline:none;color:#666666;}a:hover{text-decoration:none}img{border:0}ul{list-style:none;margin:0;}label{color:#6CBD45;font-size:14px;font-weight:bold;padding-bottom:0.5em;margin:0;}.h3{font-size:13px;font-weight:bold;}#show{background:url(images/photo.jpg)}#meun{color:#fff;padding-left:10px;}#meun img{float:left;}#submeun{margin-left:70px;float:left;}#submeun span{text-align:center;margin-right:10px;float:left;display:inline;}#submeun span a{color:#fff;height:50px;line-height:50px;font-size:14px;font-weight:bold;text-align:center;padding-left:15px;padding-right:15px;display:block;}#submeun span.cur{text-align:center;background:#82ce18;margin-right:10px;float:left;display:inline;}#top{background-color:#000;margin:0em 0 10px 0em;border-style:solid;border-width:1px;border-color:#E5E5E5;height:50px;line-height:50px;}label.subtitle{font-size:13px;float:right;color:#6CBD45;margin:0 10px;text-align:right;}h1.title{height:50px;font-size:12px;background:url(logo.png) no-repeat;}h1.title a:link,h1.title a:visited,h1.title a:hover{color:#000;text-decoration:none;}
+</style> 
+<script src="../js/jquery-2.0.3.js" type="text/javascript"></script>
+<script type="text/javascript" src="newsScroll.js"></script>
+<script type="text/javascript">
+$(function(){
+        $("#news_rolling").Scroll({line:2,speed:400,timer:2000,up:"news_rolling_up",down:"news_rolling_down"});
+		//可定义一次滚动的行数 滚动速度 时间延迟 还有向上滚动按钮 向下滚动按钮
+});
+
+</script>
+<body> 
+
+
+
+
+<div class="wrap">
+
+<div id="news_rolling">
+<ul>
+<li><a href="http://www.jq-school.com/Show.aspx?id=85" target="_blank">1原生Ajax的XMLHttpRequest对象使用指南！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=84" target="_blank">2jquery实现复选框全选、全不选和反选！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=83" target="_blank">3Js中eval函数的详解与危害！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=82" target="_blank">4HTML5图片的画法详解！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=81" target="_blank">5HTML5 Canvas的基本使用函数详解！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=80" target="_blank">6五种开发常见的开源协议！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=79" target="_blank">7什么是node.js ！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=78" target="_blank">87种常用的排序算法详细讲解！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=76" target="_blank">9常见HTTP状态详细讲解一览表！</a></li>
+<li><a href="http://www.jq-school.com/Show.aspx?id=75" target="_blank">10IE下的有条件注释详细讲解！</a></li>
+</ul>
+</div>
+<span id="news_rolling_up">向上滚动</span>&nbsp;&nbsp;&nbsp;&nbsp;
+<span id="news_rolling_down">向下滚动</span>
+
+</div>
+
+
+
+</body> 
+</html>

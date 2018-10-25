@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回到顶部和回到底部</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        body {
+            height:2000px;
+        }
+        .top {
+            position:fixed;
+            top:20px;
+            right:0px;
+            width:100px;
+            height:30px;
+            line-height: 30px;
+            text-align:center;
+            background-color:#a40000;
+            color:#fff;
+            opacity: 0.4;
+        }
+        .top:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        .bottom {
+            width:100px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            position:fixed;
+            bottom:20px;
+            right:0px;
+            background-color:#a40000;
+            color:#fff;
+            opacity: 0.4;
+        }
+        .bottom:hover {
+            opacity:1;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="top">回到顶部</div>
+<div class="bottom">回到底部</div>
+</body>
+</html>
+<script>
+    /*$(function(){
+        $('.top').click(function(){
+            $('body').animate({scrollTop:'0px'},800);
+        })
+        $('.bottom').click(function(){
+            var top = document.body.clientHeight;
+            $('body').animate({scrollTop:top + 'px'},800);
+        })
+    })*/
+</script>

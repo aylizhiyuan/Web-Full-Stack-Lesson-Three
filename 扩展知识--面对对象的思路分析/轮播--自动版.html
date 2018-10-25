@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播手动版</title>
+    <script src="jquery-2.0.3.js"></script>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            border:0;
+            box-sizing:border-box;
+        }
+        ul,ol,li,dl,dt {
+            list-style:none;
+        }
+        #banner {
+            position:relative;
+            width:880px;
+            height:300px;
+            margin:0 auto;
+        }
+        #banner ul li {
+            display:none;
+        }
+        .active {
+            display:block!important;
+        }
+        .page {
+            position:absolute;
+            right:30px;
+            bottom:20px;
+        }
+        .page span {
+            display:inline-block;
+            width:20px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            background:#000;
+            opacity: 0.5;
+            color:#fff;
+            margin-right:2.5px;
+        }
+        .page span:hover {
+            border:1px solid orange;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul>
+        <li class="active"><a href="#"><img src="images/banner1.jpg"></a></li>
+        <li><a href="#"><img src="images/banner2.png"></a></li>
+        <li><a href="#"><img src="images/banner3.png"></a></li>
+        <li><a href="#"><img src="images/banner4.png"></a></li>
+    </ul>
+    <div class="page">
+        <a href=javascript:void(0)><span class="prev"> < </span></a>
+        <a href=javascript:void(0)><span class="next"> > </span></a>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        var start = 0;
+        var autoplay = setInterval(function(){
+            //自动播放的代码
+            var end = $('ul li').length - 1;
+            start ++ ;
+            if(start == end){
+                start = 0;
+            }
+            $('ul li').eq(start).addClass('active').siblings().removeClass('active');
+        },1500)
+        //调用，自动播放
+        autoplay();
+    })
+</script>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标放上去显示遮罩层</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        #box {
+            width:390px;
+            height:590px;
+            margin:0 auto;
+        }
+        #box .big {
+            width:370px;
+            height:510px;
+            overflow:hidden;
+            position:relative;
+            padding:10px;
+            background:#fff;
+            cursor:pointer;
+        }
+        #box .bigKeep {
+            width:380px;
+            height:520px;
+            border:5px solid #cecece;
+            position:absolute;
+            left:0;
+            top:0;
+            opacity:0;
+            filter:alpha(opacity=0);
+        }
+        #box .big p {
+            font-size:12px;
+            color:#333;
+            width:320px;
+            margin:20px auto;
+            line-height:22px;
+        }
+        #box ul {
+            width:100%;
+            height:190px;
+            overflow:hidden;
+            margin-top:10px;
+        }
+        #box ul li {
+            width:170px;
+            height:170px;
+            padding:10px;
+            background:#fff;
+            position:relative;
+            cursor:pointer;
+            overflow: hidden;
+        }
+        #box ul li .keep {
+            width:170px;
+            height:170px;
+            background:#000;
+            position:absolute;
+            left:10px;
+            top:10px;
+            z-index: 1;
+            opacity: 0;
+        }
+        #box ul li .text {
+            width:140px;
+            height:150px;
+            padding:25px;
+            font-size:12px;
+            color:#fff;
+            line-height: 20px;
+            position:absolute;
+            left:-170px;
+            top:0;
+            z-index:2;
+        }
+        #box ul li .text span {
+            display:block;
+            margin:20px 0 20px 0;
+
+        }
+        #box ul li img {
+            width:170px;
+            height:170px;
+        }
+
+    </style>
+</head>
+<body style="height: 800px; background: rgb(229, 229, 229);">
+<div id="box">
+    <div class="big">
+        <img src="images/1.jpg">
+        <p>【金熹】设计上运用了多片层叠设计，形成立体倒放的花苞视觉效果，创意独特。浓烈的印花明快的色彩勾勒出美妙的夏日异国情调，优质雪纺面料让小衫更显质感穿着凉爽透气，做工也相当考究。</p>
+        <div class="bigKeep"></div>
+    </div>
+    <ul>
+        <li style="float:left">
+            <img src="images/2.jpg">
+            <div class="keep"> </div>
+            <p class="text">
+                <span>special品牌旗舰店</span>
+                最具传奇浪漫色彩的欧洲经典设计，给你带来专属的魅力.
+            </p>
+        </li>
+        <li style="float:left">
+            <img src="images/3.jpg">
+            <p class="keep"> </p>
+            <p class="text">
+                <span>sophy橡菲旗舰店</span>
+                新款韩版微笑性感红唇上衣圆领女短袖修身T恤.
+            </p>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        //ul里头的li中的keep，text都是绝对定位，要遮住img这个图片，keep是个遮罩层，text是遮罩层内的文字
+        //big里头的bigKeep是遮罩层，透明度为0
+        var oBig = $('#box .big');
+        var oBigKeep = oBig.find('.bigKeep');
+        var aLi = $('#box ul li');
+        oBig.hover(function(){
+            oBigKeep.stop().animate({
+                opacity:1
+            },500);
+        },function(){
+            oBigKeep.stop().animate({
+                opacity:0
+            },500);
+
+        })
+        var oKeep,oText;
+        aLi.hover(function(){
+            oKeep = $(this).find('.keep');
+            oText = $(this).find('.text');
+            oKeep.stop().animate({
+                opacity:0.8
+            },300);
+            oText.stop().animate({
+                left:0,
+                opacity:1
+            },200);
+        },function(){
+            oKeep.stop().animate({
+                opacity:0
+            },300);
+            oText.stop().animate({
+                left:-170,
+                opacity:0
+            },200);
+
+        })
+
+    });
+</script>

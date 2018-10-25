@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>图片滚动</title>
+    <script type="text/javascript" src="js/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        a {
+            text-decoration:none;
+        }
+        a:hover {
+            text-decoration:none;
+            color:#37a508;
+        }
+        .show {
+            width:710px;
+            height:240px;
+            float:left;
+            position:relative;
+            margin:0 20%;
+        }
+        .show a {
+            display:block;
+            width:18px;
+            height:35px;
+            font-family:'Songti';
+            font-size:50px;
+            color:#5f5f5f;
+        }
+        .show a.next {
+            position:absolute;
+            top:90px;
+            left:0;
+        }
+        .show a.prev {
+            position:absolute;
+            top:90px;
+            right:0;
+        }
+        .show .itemshow {
+            width:640px;
+            height:200px;
+            margin:40px 0 0 40px;
+            position:relative;
+            overflow:hidden;
+        }
+        .show .itemshow ul.items {
+            height:160px;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .show .itemshow ul.items li {
+            width:160px;
+            height:160px;
+            float:left;
+        }
+        .show .itemshow ul.items li img {
+            width:160px;
+            height:160px;
+            display: block;
+        }
+        .show .itemshow ul.items li span {
+            width:160px;
+            display:block;
+            text-align: center;
+            font-family: 'Microsoft YaHei';
+            padding-top:10px;
+            font-size:14px;
+            color:#5f5f5f;
+        }
+        .show .itemshow ul.items li span:hover {
+            color: #37a508;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--  盒子是itemsshow,UL在里头绝对定位，通过偏移来显示不同的内容 -->
+<div class="show">
+    <a href="javascript:;" class="next"><</a>
+    <a href="javascript:;" class="prev">></a>
+    <div class="itemshow">
+        <ul class="items">
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/1.jpg" alt=""/>
+                    <span>高级程序设计</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/2.jpg" alt="">
+                    <span>编程艺术</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/3.jpg" alt="">
+                    <span>权威指南</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/4.jpg" alt="">
+                    <span>框架设计</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/5.jpg" alt="">
+                    <span>数据结构与算法</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/6.jpg" alt="">
+                    <span>权威教程</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/7.jpg" alt="">
+                    <span>编程实战</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/8.jpg" alt="">
+                    <span>高性能</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/9.jpg" alt="">
+                    <span>深入浅出</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/10.jpg" alt="">
+                    <span>响应式布局</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/11.jpg" alt="">
+                    <span>JqueryMobile</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/12.jpg" alt="">
+                    <span>富应用开发</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/13.jpg" alt="">
+                    <span>数据结构与算法教程</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.jq-school.com/upload/20141205223755725/images/14.jpg" alt="">
+                    <span>EcmaScript6</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script>
+    $(function(){
+        var tLen = 0,
+                vNum = 4,//显示四个
+                mNum = 1,
+                mTime = 500,
+                iShow = $('.show .itemshow ul'),
+                iItmes = $('.show .itemshow ul li'),
+                mLen = iItmes.eq(0).width() * mNum,//每个LI的长度
+                cLen = (iItmes.length - vNum) * iItmes.eq(0).width();//没显示的LI的长度，也就是我们总的偏移量
+        iShow.css({width:iItmes.length*iItmes.eq(0).width()+'px'});
+        //整个UL的长度计算得出
+        //下一张
+        $('.show .next').on({
+            click:function(){
+                //下一张就是让ul向左偏移,tLen记录当前的偏移量进行累加,cLen是总的偏移量,mLen是步长
+                if(tLen < cLen){
+                    if((cLen - tLen) >= mLen){
+                        iShow.animate({left:'-=' + mLen + 'px'},mTime);
+                        tLen += mLen;
+                    }else{
+                        //这段代码没什么实际的用处
+                        iShow.animate({left:"-=" + (cLen - tLen) + "px"}, mTime);
+                        tLen += (cLen - tLen);
+                    }
+                }
+            }
+        });
+        //打个比方，总的偏移量是1600，步长是160，当前的偏移量为0.
+        // 第一次left = -160
+        //第二次left = -320
+        //第三次left = -480
+        //第四次left = -640
+        //第五次left = -800
+        //第六次left = -960
+        //第七次left = -1120
+        //第八次left = -1280
+        //第九次left = -1440  1600 - 1440 = 160
+        //第十次left = -1600  1600- 1600 = 0到达总的偏移量
+
+        //上一张
+        $(".show .prev").on({
+            click:function () {
+                if(tLen > 0){
+                    if(tLen > mLen){
+                        iShow.animate({left: "+=" + mLen + "px"}, mTime);
+                        tLen -= mLen;
+                    }else{
+                        iShow.animate({left: "+=" + tLen + "px"}, mTime);
+                        tLen = 0;
+                    }
+                }
+            }
+        })
+        //无论是从哪次left开始往回走，当前的偏移量都减去一个步长
+
+
+
+
+    })
+
+</script>

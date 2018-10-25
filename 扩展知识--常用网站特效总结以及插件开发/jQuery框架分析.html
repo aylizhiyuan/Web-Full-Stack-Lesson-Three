@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jQuery框架分析</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+    (function(){
+        //调用jQuery函数的格式$()
+        //调用的结果是返回一个匿名的对象，然后调用对象的方法（在构造函数的原型中）对数据进行操作（在构造函数的自身属性中）
+        jquery = function(select) {return new base(select) };
+        //构造函数 var obj = new base()
+        function base(select){
+            //数据存储，每一个jQuery对象都有一个单独的data数据
+            this.select = select;
+            return this;
+
+        }
+        /* //公共方法,默认的添加方式，目前不采用了
+         base.prototype.fun1 = function(){
+         //操作的是构造函数this.select 数据
+
+         }*/
+        //按道理来讲的话，方法都应该挂载到构造函数的原型中去，这里，我们则直接挂载到jQuery函数上去
+        jquery.fn = jquery.prototype = {
+            //对象
+            constructor : jquery ,
+            //可以自己创建一些内建的方法
+            get : function(){
+                //这里面的this是$()对象,也就是初始化后的jQuery对象
+            }
+
+        }
+        //构造函数的公共方法不再使用base.prototype.方法来进行添加了，而使用jquery函数的原型的方式来进行添加
+        //反正最后接收的还是构造函数的原型，只不过目前选择挂载到jquery函数的原型上去了。
+        base.prototype = jquery.fn;
+        //方法是挂载到jquery函数下jquery.方法，还是挂载到jquery函数的原型上 jquery.prototype = jquery.fn ？
+        //如果是juqery.方法，调用的时候就是$.方法
+        //如果是jquery.fn或者是jquery.prototype，调用的时候就是$().方法
+        //这里，一定要注意两种的区别在于，前者是jquery的工具函数，是直接为jQuery类本身添加方法，后者是jquery的的链式操作的函数，是为jQuery对象添加方法
+
+        //$.extend将某一个方法合并到jquery.方法中去
+        //$.fn.extend是将某一个方法合并到jquery对象方法中去$().方法
+        //如果你想要一次添加多个方法，就用$.fn.extend()或$.extend();如果只需要添加一个就用$.fn就行了。
+        jquery.extend = jquery.fn.extend  = function () {
+            //这里可以看出jQuery.extend和jQuery.fn.extend其实是同一个方法
+            //不同的地方只是内部的this不同
+            //调用$.extend() this 为$
+            //调用$.fn.extend() this 为$.fn
+            //所以如果传入两个对象的话，其功能是一样的,都是合并对象
+            //如果传入的是一个对象,
+            if(arguments.length == 1){
+                //$.extend() 里头的this是$ ,this.aaa 就相当于$.aaa
+                //$.fn.extend()里头的this是$.fn ,this.aaa就相当于$().aaa
+                var target = this;
+
+
+            };
+            var options = arguments[0];
+            for(var name in options){
+                //获取到对象中的每一个方法
+                copy = options[name];
+                //将每一个方法挂载到对应的this上去
+                target[name] = copy;
+            }
+            return target;
+
+
+
+        }
+        //批量设置$.方法或者属性
+        jquery.extend({
+            //里面的this指的是jquery这个函数本身
+            //操作的数据是方法的传值
+            lzy:'you kone'
+        })
+
+        //批量设置$().方法或者属性
+        jquery.fn.extend({
+            //里面的this指的是
+            lzy:'dout kone'
+        })
+        //一样的
+       /* console.log(jquery.prototype);
+        console.log(base.prototype);
+        //就是个函数function(){new base(){} }
+        console.log(jquery);*/
+        //console.log(jquery.lzy);
+
+        //console.log(jquery.prototype.lzy);
+        console.log(jquery());
+
+
+    })();
+
+
+
+</script>
