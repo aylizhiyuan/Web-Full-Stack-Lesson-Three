@@ -1,66 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b1320e7-07c2-4950-b581-a13a3652926f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/360度旋转.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/360度旋转.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/TabSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/TabSwitch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/jquery-1.7.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/TAB切换插件学习/jquery-1.7.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/ajax加载更多.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/ajax加载更多.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/jQuery框架分析.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/jQuery框架分析.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/jquery插件.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/jquery插件.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-2.0.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-2.0.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-lzyTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-lzyTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-message.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/jquery-message.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/不针对JQ对象的工具插件.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/不针对JQ对象的工具插件.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/又传参又调用方法的插件.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/又传参又调用方法的插件.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/简单只传递方法的插件.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/js/简单只传递方法的插件.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/tab1.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/tab1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/下拉效果.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/下拉效果.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/两张图片切换的效果.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/两张图片切换的效果.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时1.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时2.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时插件学习/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时插件学习/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时插件学习/js/countdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/倒计时插件学习/js/countdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/商品筛选2.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/商品筛选2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/.idea/scopes/scope_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/.idea/scopes/scope_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/b.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/b.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/jquery-2.0.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/jquery-2.0.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/jquery.slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片上下左右滚动插件/jquery.slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片始终居中显示.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片始终居中显示.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/Css/Css.css" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/Css/Css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/Images/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/Script/jquery.kkImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/Script/jquery.kkImage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片点击大图显示/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片的点击放大切换提前预加载.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片的点击放大切换提前预加载.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片等比例缩放.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片等比例缩放.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片缩略图.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片缩略图.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片翻牌旋转切换.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/图片翻牌旋转切换.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/弹出框.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/弹出框.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我的测试页面.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我的测试页面.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我自己写的插件/ajax信息提示框.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我自己写的插件/ajax信息提示框.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我自己写的插件/tab.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我自己写的插件/tab.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/捕获和冒泡的问题.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/捕获和冒泡的问题.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/文字滚动/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/文字滚动/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/文字滚动/newsScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/文字滚动/newsScroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/时间轴.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/时间轴.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/星级评分.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/星级评分.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/最简单的图片滚动.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/最简单的图片滚动.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/检测用户输入字数.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/检测用户输入字数.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/相册图片折叠切换.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/相册图片折叠切换.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/缩略图2.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/缩略图2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/置顶.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/置顶.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/跑马灯插件/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/跑马灯插件/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/跑马灯插件/images/Thumbs.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/跑马灯插件/js/fsrPMD.js" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/跑马灯插件/js/fsrPMD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/轮播1.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/轮播1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/轮播2.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/轮播2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/通过URL找到没加载图片的高宽.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/通过URL找到没加载图片的高宽.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/鼠标放上去显示遮罩层.html" beforeDir="false" afterPath="$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/鼠标放上去显示遮罩层.html" afterDir="false" />
+    <list default="true" id="4b1320e7-07c2-4950-b581-a13a3652926f" name="Default" comment="删除不必要的文件">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -83,20 +25,68 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-232195961">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="15" />
+          <entry key="js" value="2" />
+          <entry key="md" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="15" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Markdown" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="md" value="88" />
+          <entry key="txt" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="88" />
+          <entry key="PLAIN_TEXT" value="8" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="第三周" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="175">
+                <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/小米商城jquery 版" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/小米商城搭建.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -118,18 +108,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="第一阶段WEB技术---Jquery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="第一阶段WEB技术---Jquery" type="462c0819:PsiDirectoryNode" />
+              <item name="3第一阶段--Jquery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="3第一阶段--Jquery" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,19 +171,28 @@
       <workItem from="1499391885938" duration="87000" />
       <workItem from="1501227805091" duration="49000" />
       <workItem from="1540456054086" duration="240000" />
+      <workItem from="1558072711677" duration="327000" />
     </task>
+    <task id="LOCAL-00001" summary="删除不必要的文件">
+      <created>1558072932599</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1558072932599</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4837000" />
+    <option name="totallyTimeSpent" value="5164000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973601" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973601" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -202,8 +201,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.37350705" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3724213" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -214,6 +214,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="删除不必要的文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除不必要的文件" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/icofont/demo.html" />
@@ -237,5 +241,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/icofont/iconfont.css" />
     <entry file="file://$PROJECT_DIR$/index.html" />
+    <entry file="file://$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/弹出框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6899" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--常用网站特效总结以及插件开发/我的测试页面.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2769" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--仿jquery库设计思路分析/tool.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2205" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--仿jquery库设计思路分析/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2454" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--仿jquery库设计思路分析/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/tab切换第一版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2489" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/tab切换第二版--自动轮播.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2139" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/轮播--手自一体版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3014" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/轮播--自动版.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/轮播的面对对象版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="111" column="14" lean-forward="true" selection-start-line="111" selection-start-column="14" selection-end-line="111" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/轮播--手动版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2205" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/滚动条.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/星级评分.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1614" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/弹出框--第二版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6269" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/弹出框--第一版.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4935" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/弹出框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2835" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扩展知识--面对对象的思路分析/回到顶部和回到底部.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="175">
+            <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
